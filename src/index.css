@@ -25,3 +25,28 @@ h3 {
 a {
   text-decoration: none;
 }
+
+b {
+  background: linear-gradient(
+    90deg,
+    hsla(14, 98%, 50%, 0.3),
+    hsla(14, 98%, 50%, 0)
+  );
+}
+
+.geometric-box {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: rgb(234, 174, 8);
+  rotate: -30deg;
+}
+
+.geometric-box::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 3px solid black;
+  left: -5px;
+}
