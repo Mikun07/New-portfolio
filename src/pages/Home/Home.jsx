@@ -47,7 +47,7 @@ function Home() {
     <>
       <div name="home" className="w-full px-4 flex h-screen bg-gray-200">
         <div className="max-w-screen-lg mx-auto w-full h-full flex justify-center items-center gap-6">
-          <div className="flex flex-col-reverse lg:flex-row gap-6">
+          <div className="flex flex-col-reverse lg:flex-row gap-6 mt-[100px]">
             {/* info */}
             <div className=" flex justify-center flex-col gap-6">
               <div className="flex text-justify flex-col gap-6">
@@ -97,7 +97,7 @@ function Home() {
                 <img
                   src={RandomLines}
                   alt=""
-                  className=" z-0 absolute right-[-25px] top-[90px] bottom-[70px]"
+                  className=" z-0 absolute right-[-15px] top-[90px] bottom-[70px]"
                 />
 
                 <div class="geometric-box z-30 absolute top-[70px]"></div>

@@ -18,7 +18,7 @@ function Navbar() {
     },
     {
       id: 3,
-      link: "experience",
+      link: "Services",
       icon: "clipboard-outline",
     },
     {
@@ -49,13 +49,11 @@ function Navbar() {
         </a>
 
         <div>
-          <ul className="hidden sm:hidden md:hidden lg:flex gap-6 text-lg font-semibold ">
+          <ul className="hidden sm:hidden md:hidden lg:flex gap-4 text-lg font-semibold ">
             {links.map(({ id, link }) => (
               <span
                 key={id}
-                className={`capitalize cursor-pointer hover:scale-105 duration-200 px-4 ${
-                  active === id ? " active:text-orange-500" : " text-black"
-                }`}
+                className={`capitalize cursor-pointer hover:scale-105 duration-200 px-2`}
               >
                 <Link to={link} smooth duration={500}>
                   {link}

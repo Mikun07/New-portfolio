@@ -5,15 +5,15 @@ import RandomLines from "../../assets/svg/random-lines.svg";
 function About() {
   return (
     <>
-      <div name="about" className=" w-full px-4 h-auto bg-gray-200">
-        <div className="max-w-screen-lg mx-auto w-full h-full flex flex-col justify-center gap-6 lg:gap-32">
+      <div name="about" className=" w-full px-4 bg-gray-200">
+        <div className="max-w-screen-lg mx-auto pt-[90px] w-full h-full flex flex-col justify-center gap-6">
           <div className=" flex justify-center items-center">
             <h1 className="capitalize font-bold">
               about <b>me.</b>
             </h1>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6">
+          <div className="flex flex-col lg:flex-row gap-6 mt-6">
             {/* image */}
             <div className=" flex justify-center">
               <div className="flex relative">
