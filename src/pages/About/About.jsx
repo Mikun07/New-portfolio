@@ -6,10 +6,10 @@ function About() {
   return (
     <>
       <div name="about" className=" w-full px-4 bg-gray-200">
-        <div className="max-w-screen-lg mx-auto pt-[90px] w-full h-full flex flex-col justify-center gap-6">
+        <div className="max-w-screen-lg mx-auto pt-[90px] pb-16 w-full h-full flex flex-col justify-center gap-4">
           <div className=" flex justify-center items-center">
-            <h1 className="capitalize font-bold">
-              about <b>me.</b>
+            <h1 className="section__title-1 capitalize font-bold">
+              <span>about me.</span>
             </h1>
           </div>
 

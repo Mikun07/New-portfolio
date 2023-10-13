@@ -18,7 +18,7 @@ function Navbar() {
     },
     {
       id: 3,
-      link: "Services",
+      link: "services",
       icon: "clipboard-outline",
     },
     {
