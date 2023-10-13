@@ -28,7 +28,7 @@ function Services() {
 
                 <p className="services__description">
                   Beautiful and elegant designs with interfaces that are
-                  intutive, efficient and pleasant to use for user.
+                  intuitive, efficient and pleasant to use for user.
                 </p>
               </div>
             </article>
@@ -47,7 +47,7 @@ function Services() {
                 </h2>
 
                 <p className="services__description">
-                  Custom web development tailored to your specificatons,
+                  Custom web development tailored to your specifications,
                   designed to provide a flawless user experience.
                 </p>
               </div>
