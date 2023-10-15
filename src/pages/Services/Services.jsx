@@ -3,8 +3,8 @@ import React from "react";
 function Services() {
   return (
     <>
-      <div name="services" className=" w-full px-4 bg-gray-200">
-        <div className="max-w-screen-lg mx-auto pt-[60px] pb-16 w-full h-full flex flex-col justify-center gap-6">
+      <div name="services" className="h-screen lg:pt-0 md:pt-[550px] sm:pt-[550px] pt-[750px] px-4 flex items-center bg-gray-200">
+        <div className="flex flex-col">   
           <div className=" flex justify-center items-center">
             <h1 className="section__title-1 capitalize font-bold">
               <span>services.</span>
@@ -54,6 +54,7 @@ function Services() {
             </article>
 
           </div>
+
         </div>
       </div>
     </>

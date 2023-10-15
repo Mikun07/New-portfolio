@@ -51,25 +51,25 @@ b {
   left: -5px;
 }
 
-.section__title-1, 
+.section__title-1,
 .section__title-2 {
   position: relative;
   width: max-content;
-  margin: .45rem auto 2rem;
+  margin: 0.45rem auto 2rem;
 }
 
-.section__title-1 span, 
+.section__title-1 span,
 .section__title-2 span {
   z-index: 5;
   position: relative;
 }
 
-.section__title-1::after, 
+.section__title-1::after,
 .section__title-2::after {
   content: "";
   width: 40px;
   height: 28px;
-  background-color: hsla(14, 98%, 50%, .2);
+  background-color: hsla(14, 98%, 50%, 0.2);
   position: absolute;
   top: -4px;
   right: -8px;
@@ -131,4 +131,115 @@ b {
 
 .services__title {
   margin-bottom: 1.25rem;
+}
+
+.contact__data {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  padding: 3rem 1.5rem 3.5rem;
+  border-bottom: 4px solid rgb(249, 115, 22);
+  background-color: rgb(209, 213, 219);
+  transition: background-color 0.4s;
+}
+
+.contact__data .section__title-2 {
+  margin: 0 0 1.5rem;
+  transform: translateX(-3rem);
+}
+
+.contact__data .geometric-box {
+  top: 2rem;
+  right: 2.5rem;
+}
+
+.contact__mail {
+  position: relative;
+  background-color: black;
+  padding: 5rem 1.5rem 2.5rem;
+  margin-top: -2.5rem;
+  transition: background-color 0.4s;
+  /* width: 67%; */
+}
+
+.contact__title {
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact__form {
+  position: relative;
+  width: 100%;
+}
+
+.contact__box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+
+.contact__input,
+.contact__button {
+  font-size: medium;
+  outline: none;
+  border: none;
+}
+
+.contact__input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: black;
+  border: 3px solid rgb(209, 213, 219);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: border 0.4s, background-color 0.4s;
+}
+
+.contact__input::placeholder {
+  color: rgb(209, 213, 219);
+  transition: opacity 0.4s;
+}
+
+.contact__input:focus {
+  border: 3px solid white;
+}
+
+.contact__input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+
+.contact__label {
+  color: rgb(209, 213, 219);
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: small;
+  font-weight: 500;
+  background-color: black;
+  padding: 8px;
+  pointer-events: none;
+  transition: top .4s, opacity .4s, background-color .4s;
+  opacity: 0;
+}
+
+.contact__form .contact__area {
+  height: 10rem;
+  width: 100%;
+}
+
+.contact__area textarea {
+  resize: none;
+  padding-top: 1rem;
+}
+
+.contact__input:focus::placeholder {
+  opacity: 0;
+}
+
+.contact__input:focus + .contact__label, .contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label {
+  opacity: 1;
+  top: -16px;
 }

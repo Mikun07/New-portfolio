@@ -1,19 +1,18 @@
 import React from "react";
 import AP from "../../assets/img/Ap.jpg";
 import RandomLines from "../../assets/svg/random-lines.svg";
-
 function About() {
   return (
     <>
-      <div name="about" className=" w-full px-4 bg-gray-200">
-        <div className="max-w-screen-lg mx-auto pt-[90px] pb-16 w-full h-full flex flex-col justify-center gap-4">
+      <div name="about" className="h-screen lg:pt-0 md:pt-[250px] sm:pt-[250px] pt-[400px] px-4 flex items-center justify-center bg-gray-200">
+        <div className="flex flex-col">
           <div className=" flex justify-center items-center">
             <h1 className="section__title-1 capitalize font-bold">
               <span>about me.</span>
             </h1>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6 mt-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             {/* image */}
             <div className=" flex justify-center">
               <div className="flex relative">
@@ -30,7 +29,7 @@ function About() {
                 <div className=" w-[50px] z-20 h-[50px] bg-orange-500 absolute left-[170px] top-[250px]"></div>
                 <div className="bg-gray-300 z-10 ml-[90px] w-[180px] h-[350px]"></div>
                 <div className="bg-orange-500 z-0 ml-[90px] mt-1 w-[180px] h-[350px] absolute"></div>
-                <div class="geometric-box z-30 absolute top-5 left-[230px]"></div>
+                <div className="geometric-box z-30 absolute top-5 left-[230px]"></div>
               </div>
             </div>
 
@@ -55,13 +54,13 @@ function About() {
                 </ul>
 
                 <div className=" flex justify-center items-center gap-6">
-                  <button className="bg-black px-4 py-2 text-white flex items-center gap-1 text-center hover:bg-orange-500 rounded-sm text-base">
+                  <button className="bg-black p-4 text-white flex items-center capitalize gap-1 text-center hover:bg-orange-500 rounded-sm text-base">
                     <span>
                       <ion-icon name="paper-plane-outline"></ion-icon>
                     </span>
                     Contact me
                   </button>
-                  <button className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 px-4 py-2 items-center text-center rounded-sm text-base">
+                  <button className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 p-4 items-center text-center rounded-sm text-base">
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </button>
                 </div>

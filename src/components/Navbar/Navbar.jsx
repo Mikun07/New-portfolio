@@ -35,7 +35,7 @@ function Navbar() {
   64;
   return (
     <>
-      <nav className="w-full h-16 z-50 fixed transition-shadow duration-400 bg-gray-200 flex justify-between text-center px-4 items-center shadow-lg">
+      <nav className="w-full h-16 fixed z-50 transition-shadow duration-400 bg-gray-200 flex justify-between text-center px-4 items-center shadow-lg">
         <a
           href="#"
           className="flex text-center items-center gap-2 font-semibold cursor-pointer"
