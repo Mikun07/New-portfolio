@@ -1,10 +1,14 @@
 import React from "react";
 import AP from "../../assets/img/Ap.jpg";
 import RandomLines from "../../assets/svg/random-lines.svg";
+import { Link } from "react-scroll";
 function About() {
   return (
     <>
-      <div name="about" className="h-screen lg:pt-0 md:pt-[250px] sm:pt-[250px] pt-[400px] px-4 flex items-center justify-center bg-gray-200">
+      <div
+        name="about"
+        className="h-screen lg:pt-0 md:pt-[250px] sm:pt-[250px] pt-[400px] lg:px-20 px-4 flex items-center justify-center bg-gray-200"
+      >
         <div className="flex flex-col">
           <div className=" flex justify-center items-center">
             <h1 className="section__title-1 capitalize font-bold">
@@ -43,7 +47,9 @@ function About() {
                     <span className="capitalize font-bold">
                       UI/UX user interface
                     </span>{" "}
-                    that meet customer needs. I Specialize in collaborating with customers to gather requirements, produce plans and improve designs for usability and functionality.
+                    that meet customer needs. I Specialize in collaborating with
+                    customers to gather requirements, produce plans and improve
+                    designs for usability and functionality.
                   </li>
                   <li>
                     <span className="capitalize font-bold">My Skills are:</span>{" "}
@@ -54,15 +60,20 @@ function About() {
                 </ul>
 
                 <div className=" flex justify-center items-center gap-6">
-                  <button className="bg-black p-4 text-white flex items-center capitalize gap-1 text-center hover:bg-orange-500 rounded-sm text-base">
+                  <Link
+                    to="contact"
+                    smooth
+                    duration={700}
+                    className="bg-black p-4 text-white flex items-center capitalize gap-1 text-center hover:bg-orange-500 rounded-sm text-base"
+                  >
                     <span>
                       <ion-icon name="paper-plane-outline"></ion-icon>
                     </span>
                     Contact me
-                  </button>
-                  <button className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 p-4 items-center text-center rounded-sm text-base">
+                  </Link>
+                  <a target="_blank" href="https://github.com/Mikun07" className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 p-4 items-center text-center rounded-sm text-base">
                     <ion-icon name="logo-linkedin"></ion-icon>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

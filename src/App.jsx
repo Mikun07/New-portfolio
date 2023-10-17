@@ -7,6 +7,7 @@ import Projects from './pages/Projects/Projects';
 import Contact from './pages/Contact/Contact,';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/Scroll/ScrollToTop';
+import Social from './components/social/Social';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Contact />
       <Footer />
       <ScrollToTop />
+      <Social />
     </>
   )
 }

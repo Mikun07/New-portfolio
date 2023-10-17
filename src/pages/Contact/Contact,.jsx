@@ -26,7 +26,7 @@ function Contact() {
     <>
       <div
         name="contact"
-        className="lg:h-screen lg:pt-[60px] md:pt-[250px] sm:pt-[250px] pt-[150px] px-4 flex items-center justify-center bg-gray-200"
+        className="lg:h-screen lg:pt-[60px] md:pt-[250px] sm:pt-[250px] pt-[150px] lg:px-20 px-4 flex items-center justify-center bg-gray-200"
       >
         <div className="flex flex-col lg:flex-row sm:flex-col lg:items-center">
           <div className="flex flex-col w-screen contact__data z-10 justify-center items-center">

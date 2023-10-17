@@ -3,7 +3,7 @@ import React from "react";
 function Services() {
   return (
     <>
-      <div name="services" className="h-screen lg:pt-0 md:pt-[550px] sm:pt-[550px] pt-[750px] px-4 flex items-center bg-gray-200">
+      <div name="services" className="h-screen lg:pt-0 md:pt-[550px] sm:pt-[550px] pt-[750px] lg:px-20 px-4 flex items-center bg-gray-200">
         <div className="flex flex-col">   
           <div className=" flex justify-center items-center">
             <h1 className="section__title-1 capitalize font-bold">
