@@ -39,7 +39,6 @@ function Social() {
   return (
     <div className="hidden lg:flex flex-col top-[30%] left-0 fixed z-40">
       <ul>
-        {/* eslint-disable-next-line */}
         {links.map(({ id, child, href, style, download, className}) => (
           <li
             key={id}
