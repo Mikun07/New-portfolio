@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import toast from "react-hot-toast";
+import toast , { Toaster } from "react-hot-toast";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -129,6 +129,7 @@ function Contact() {
                   <ion-icon name="paper-plane-outline"></ion-icon>
                   send message
                 </button>
+                <Toaster />
               </div>
             </form>
           </div>
