@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import IconBtn from "../Button/IconBtn";
 
 function Navbar() {
   const [active, setActive] = useState(0);
