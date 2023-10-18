@@ -20,15 +20,6 @@ function Projects() {
 
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
             <ProjectCard
-              Img={Project1}
-              Href="https://github.com/Mikun07/Movie-Recommendation-App/tree/master"
-              Title="Website"
-              SubTitle="Movie Recommendation website."
-              Info=" This project recommend movies bases on genre using ReactJS
-              with Redux for state management and local storage for data
-              persistence and Tailwind CSS for styling."
-            />
-            <ProjectCard
               Img={Project3}
               Href="https://festus-olaleye-ayomikun.netlify.app"
               Title="Website"
@@ -42,6 +33,15 @@ function Projects() {
               SubTitle="Hotel Booking Dashboard."
               Info=" This is a beautifully designed hotel booking dashboard built
                   using ReactJS and Tailwind CSS."
+            />
+            <ProjectCard
+              Img={Project1}
+              Href="https://github.com/Mikun07/Movie-Recommendation-App/tree/master"
+              Title="Website"
+              SubTitle="Movie Recommendation website."
+              Info=" This project recommend movies bases on genre using ReactJS
+              with Redux for state management and local storage for data
+              persistence and Tailwind CSS for styling."
             />
           </div>
         </div>
