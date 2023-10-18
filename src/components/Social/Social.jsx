@@ -10,8 +10,7 @@ function Social() {
         </>
       ),
       href: "https://www.linkedin.com/in/ayomikun-festus-olaleye-bab137249?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2LsXSs0oSyykPYUHzKAwlw%3D%3D",
-      style: "rounded-tr-md",
-      className: "flex justify-between items-center w-40 h-14 px-4 font-bold bg-[#0077b5] ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300"
+      className: "flex justify-between items-center w-40 h-14 px-4 font-bold bg-[#0077b5] ml-[-100px] rounded-tr-md hover:ml-[-10px] hover:rounded-md duration-300"
     },
     {
       id: 2,
@@ -31,18 +30,17 @@ function Social() {
         </>
       ),
       href: "Resume.pdf",
-      style: "rounded-br-md",
       download: true,
-      className: "flex justify-between items-center w-40 h-14 px-4 font-bold bg-[#DD1908] ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300"
+      className: "flex justify-between items-center w-40 h-14 px-4 font-bold bg-[#DD1908] rounded-br-md ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300"
     },
   ];
   return (
     <div className="hidden lg:flex flex-col top-[30%] left-0 fixed z-40">
       <ul>
-        {links.map(({ id, child, href, style, download, className}) => (
+        {links.map(({ id, child, href, download, className}) => (
           <li
             key={id}
-            className={className +"" +style}
+            className={className}
           >
             <a
               href={href}
