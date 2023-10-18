@@ -38,7 +38,7 @@ function Projects() {
             <ProjectCard
               Img={Project2}
               Href="https://mimabooking.netlify.app/"
-              Title=">Website"
+              Title="Website"
               SubTitle="Hotel Booking Dashboard."
               Info=" This is a beautifully designed hotel booking dashboard built
                   using ReactJS and Tailwind CSS."

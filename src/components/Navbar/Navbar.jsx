@@ -20,7 +20,7 @@ function Navbar() {
     {
       id: 3,
       link: "services",
-      icon: "clipboard-outline",
+      icon: "terminal-outline",
     },
     {
       id: 4,
