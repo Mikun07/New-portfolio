@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from "react";
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -7,7 +7,6 @@ import Projects from './pages/Projects/Projects';
 import Contact from './pages/Contact/Contact,';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/Scroll/ScrollToTop';
-import Social from './components/social/Social';
 
 function App() {
 
