@@ -30,14 +30,14 @@ function Projects() {
             />
             <ProjectCard
               Img={Project3}
-              Href="https://github.com/Mikun07/New-portfolio"
+              Href="https://festus-olaleye-ayomikun.netlify.app"
               Title="Website"
               SubTitle="Portfolio Website."
               Info="This portfolio is a beautifully designed, modern, and responsive website built using ReactJS and Tailwind CSS."
             />
             <ProjectCard
               Img={Project2}
-              Href="https://mimabooking.netlify.app/"
+              Href="https://mimabooking.netlify.app"
               Title="Website"
               SubTitle="Hotel Booking Dashboard."
               Info=" This is a beautifully designed hotel booking dashboard built
