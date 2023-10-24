@@ -7,7 +7,7 @@ function ProjectCard({ Img, Href, Title, SubTitle, Info }) {
         <div className="relative overflow-hidden group">
           <img src={Img} alt="" className="w-full" />
           <div className=" absolute w-full h-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-            <button className="cursor-pointer text-white bg-transparent w-[50px] h-[50px] border-2 border-orange-500 rounded-full">
+            <button className="cursor-pointer text-white bg-transparent w-[50px] h-[50px] border-2 border-white rounded-full">
               <a target="_blank" href={Href}>
                 <ion-icon name="logo-github" size="large"></ion-icon>
               </a>
