@@ -13,7 +13,7 @@ function Projects() {
     <>
       <div
         name="project"
-        className="lg:h-screen lg:pt-[85px] md:pt-[550px] sm:pt-[550px] pt-[450px] lg:px-20 px-4 flex items-center justify-center bg-gray-200"
+        className="lg:h-screen lg:pt-[90px] md:pt-[550px] sm:pt-[550px] pt-[450px] lg:px-20 px-4 flex items-center justify-center bg-gray-200"
       >
         <div className="flex flex-col">
           <div className=" flex justify-center items-center">
