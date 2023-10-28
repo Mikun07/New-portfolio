@@ -15,10 +15,10 @@ function ProjectCard({ Img, Href, Title, SubTitle, Info }) {
           </div>
         </div>
         <div className="">
-          <h2 className=" capitalize text-sm font-bold">{SubTitle}</h2>
-          <h3 className="capitalize font-medium">{Title}</h3>
+          <h2 className="capitalize text-sm font-bold section__title-1">{SubTitle}</h2>
+          <h3 className="capitalize font-bold">{Title}</h3>
 
-          <p className="text-justify font-normal leading-6 tracking-wide">
+          <p className="text-justify font-normal leading-5 tracking-tight">
             {Info}
           </p>
         </div>

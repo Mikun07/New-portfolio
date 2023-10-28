@@ -36,7 +36,7 @@ function Projects() {
             />
             <ProjectCard
               Img={Project1}
-              Href="https://github.com/Mikun07/Movie-Recommendation-App/tree/master"
+              Href="mikun-films.netlify.app"
               Title="Website"
               SubTitle="Movie Recommendation website."
               Info=" This project recommend movies bases on genre using ReactJS
