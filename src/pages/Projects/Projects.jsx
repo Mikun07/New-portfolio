@@ -3,7 +3,7 @@ import Project1 from "../../assets/img/project-1.jpg";
 import Project2 from "../../assets/img/project-2.jpg";
 import Project3 from "../../assets/img/project-3.jpg";
 import ProjectCard from "../../components/Card/ProjectCard";
-import SeeMoreProjectModal from "../../components/Modal/SeeMoreProjectModal";
+// import SeeMoreProjectModal from "../../components/Modal/SeeMoreProjectModal";
 
 function Projects() {
   const [showModel, setShowModal] = useState(false);
@@ -47,7 +47,7 @@ function Projects() {
               />
             </div>
 
-            <div className="flex justify-center items-end my-3">
+            {/* <div className="flex justify-center items-end my-3">
               <button
                 onClick={() => setShowModal(true)}
                 className="cursor-pointer font-bold capitalize hover:scale-110 duration-300"
@@ -59,7 +59,7 @@ function Projects() {
                 onClose={handleOnClose}
                 visible={showModel}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
