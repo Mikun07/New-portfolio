@@ -22,7 +22,7 @@ function Projects() {
           </div>
 
           <div className="p-2 ">
-            <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
               <ProjectCard
                 Img={Project3}
                 Href="https://festus-olaleye-ayomikun.netlify.app"
