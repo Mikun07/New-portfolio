@@ -45,7 +45,10 @@ function Home() {
 
   return (
     <>
-      <div name="home" className="h-screen w-full lg:px-20 px-4 flex items-center justify-center bg-gray-200">
+      <div
+        name="home"
+        className="h-screen w-full lg:px-20 px-4 flex items-center justify-center bg-gray-200"
+      >
         <div className="flex border-2 flex-col-reverse lg:flex-row gap-6">
           {/* info */}
           <div className=" flex justify-center flex-col gap-6">
@@ -55,9 +58,14 @@ function Home() {
                 Knowledgeable and adept at creating successful websites that
                 meet customer needs. Specializing in collaborating with
                 customers to gather requirements, produce plans and improve
-                designs for usability and functionality. Fully proficient in
-                HTML5, CSS3, JavaScript, and other JavaScript frameworks like
-                React and Angular.
+                designs for usability and functionality. Fully proficient in{" "}
+                <span className=" font-bold">HTML5</span>, <span className=" font-bold">CSS3</span>,{" "}
+                <span className=" font-bold">JavaScript</span> and other JavaScript frameworks like
+                <span className=" capitalize font-bold">
+                  {" "}
+                  React and Angular
+                </span>
+                .
               </p>
             </div>
 
@@ -71,7 +79,7 @@ function Home() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <ion-icon name={icon} ></ion-icon>
+                    <ion-icon name={icon}></ion-icon>
                   </a>
                 </button>
               ))}
