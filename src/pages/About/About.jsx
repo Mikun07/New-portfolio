@@ -7,7 +7,7 @@ function About() {
     <>
       <div
         name="about"
-        className="h-screen lg:pt-0 md:pt-[250px] sm:pt-[250px] pt-[400px] lg:px-20 px-4 flex items-center justify-center bg-gray-200"
+        className="h-screen w-full lg:px-20 px-4 flex items-center justify-center bg-gray-200"
       >
         <div className="flex flex-col">
           <div className=" flex justify-center items-center">

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-scroll";
 
 function Navbar() {
-  const [active, setActive] = useState(0);
   const [nav, setNav] = useState(false);
 
   const links = [
