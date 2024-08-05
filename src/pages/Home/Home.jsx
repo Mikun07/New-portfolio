@@ -19,13 +19,7 @@ function Home() {
       style:
         "bg-black h-[40px] h-[50px] w-[50px] text-lg rounded-md flex items-center text-white justify-center cursor-pointer hover:scale-105 duration-200",
     },
-    // {
-    //   id: 3,
-    //   icon: "mail-outline",
-    //   href: "mailto:ayomikunolaleye@gmail.com",
-    //   style:
-    //     "bg-[#EA4335] h-[50px] w-[50px] text-lg rounded-md flex items-center text-white justify-center cursor-pointer hover:scale-105 duration-200",
-    // },
+  
     {
       id: 3,
       icon: "document-text-outline",
@@ -35,12 +29,7 @@ function Home() {
       download: true,
       src: "Resume.pdf",
     },
-    // {
-    //   id: 5,
-    //   icon: "logo-whatsapp",
-    //   href: "",
-    //   style: "bg-[#075E54] h-[50px] w-[50px] text-lg rounded-md flex items-center text-white justify-center cursor-pointer hover:scale-105 duration-200",
-    // },
+    
   ];
 
   return (
@@ -54,16 +43,19 @@ function Home() {
           <div className=" flex justify-center flex-col gap-6">
             <div className="flex text-justify flex-col gap-6">
               <p>
-                <b className="home__description">Frontend Developer. </b>
+                <b className="home__description">Frontend Engineer. </b>
                 Knowledgeable and adept at creating successful websites that
                 meet customer needs. Specializing in collaborating with
                 customers to gather requirements, produce plans and improve
                 designs for usability and functionality. Fully proficient in{" "}
-                <span className=" font-bold">HTML5</span>, <span className=" font-bold">CSS3</span>,{" "}
-                <span className=" font-bold">JavaScript</span> and other JavaScript frameworks like
+                <span className=" font-bold">HTML5</span>,{" "}
+                <span className=" font-bold">CSS3</span>,{" "}
+                <span className=" font-bold">JavaScript</span>,{" "}
+                <span className=" font-bold">TypeScript</span> and other
+                JavaScript frameworks like
                 <span className=" capitalize font-bold">
                   {" "}
-                  React and Angular
+                  Node JS, React and Angular
                 </span>
                 .
               </p>

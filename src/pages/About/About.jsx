@@ -54,8 +54,8 @@ function About() {
                   <li>
                     <span className="capitalize font-bold">My Skills are:</span>{" "}
                     Frontend Development, Web Development, HTML, CSS,
-                    JavaScript. React, Angular, Bootstrap, Tailwind CSS. Rest
-                    API, Microsoft SQL Server, Java, Git & GitHub.
+                    JavaScript, TypeScript. React, Angular, Bootstrap, Tailwind
+                    CSS. Rest API, Microsoft SQL Server, Cypress, Git & GitHub.
                   </li>
                 </ul>
 
@@ -71,7 +71,11 @@ function About() {
                     </span>
                     Contact me
                   </Link>
-                  <a target="_blank" href="https://github.com/Mikun07" className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 p-4 items-center text-center rounded-sm text-base">
+                  <a
+                    target="_blank"
+                    href="https://github.com/Mikun07"
+                    className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 p-4 items-center text-center rounded-sm text-base"
+                  >
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
                 </div>
