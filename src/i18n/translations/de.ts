@@ -3,27 +3,16 @@ import type { Translations } from './en'
 const de: Translations = {
   nav: {
     home: 'Start',
-    about: 'Über mich',
+    about: 'Uber mich',
     experience: 'Erfahrung',
     services: 'Leistungen',
     projects: 'Projekte',
     contact: 'Kontakt',
   },
-  sidebar: {
-    title: 'Softwareingenieur',
-    subtitle: 'Moderne Web- & KI-Systeme',
-    location: 'Karlskrona, Schweden',
-    available: 'Offen für Möglichkeiten',
-    bio: 'Softwareingenieur spezialisiert auf skalierbare Web-Apps, REST-APIs und angewandte KI-Workflows. Derzeit im Masterstudium Softwaretechnik an der BTH, Schweden.',
-    findMe: 'Finde mich auf',
-    contact: 'Kontakt',
-    lightMode: 'Heller Modus',
-    darkMode: 'Dunkler Modus',
-  },
   home: {
     location: 'Karlskrona, Schweden',
-    role: 'Softwareingenieur · Moderne Web- & KI-Systeme',
-    available: 'Offen für Möglichkeiten',
+    role: 'Softwareingenieur | Full-Stack + KI-Systeme',
+    available: 'Offen fur Moglichkeiten',
     coreStack: 'Kerntechnologien',
     cta: {
       contact: 'Kontakt aufnehmen',
@@ -31,20 +20,20 @@ const de: Translations = {
       cv: 'Lebenslauf herunterladen',
     },
     bio1:
-      'Softwareingenieur spezialisiert auf die Konzeption und Entwicklung skalierbarer, produktionsreifer Webanwendungen und API-gesteuerter Systeme mit modernen Fullstack-Technologien wie React, TypeScript, Node.js und modernen Frontend-Ökosystemen. Starker Fokus auf wartbare Architektur, wiederverwendbare Komponentsysteme, Leistungsoptimierung, Teststrategien und moderne Best Practices.',
+      'Full-Stack-Softwareingenieur mit 5+ Jahren Erfahrung in Produktionssystemen: React/TypeScript-Frontends, Python/FastAPI- und Node.js-Backends, Docker-Containerisierung, GitHub Actions CI/CD und LLM-Orchestrierungspipelines. Aktuell im Masterstudium Softwaretechnik an der BTH, Schweden.',
     bio2:
-      'Zusätzlich erfahren in angewandten KI-Workflows, Prompt-Engineering und dem Einsatz von LLM-basierten Tools wie GPT-4 und Claude zur Verbesserung von Produktivität, Problemlösung und Softwareentwicklungsprozessen. Derzeit im Masterstudium Softwaretechnik am Blekinge Institute of Technology mit Interesse an Softwarearchitektur, Qualitätstechnik und angewandter KI.',
+      'Erfahren in angewandten KI-Workflows, LLM-Orchestrierung (Claude API, GPT-4) und KI-Tools zur Verbesserung von Softwarequalitat und Produktivitat.',
   },
   about: {
     eyebrow: 'Lerne mich kennen',
-    heading: 'Über mich',
+    heading: 'Uber mich',
     education: 'Ausbildung',
     skills: 'Kenntnisse',
     certifications: 'Zertifizierungen',
     bio1:
-      'Leidenschaftlich engagiert für die Entwicklung skalierbarer, produktionsreifer Webanwendungen mit sauberer Architektur und herausragenden Nutzererlebnissen. Ich spezialisiere mich auf die Zusammenarbeit mit funktionsübergreifenden Teams, um Anforderungen zu erfassen, Lösungen zu entwerfen und qualitativ hochwertige Software zu liefern.',
+      'Leidenschaftlich engagiert fur die Entwicklung skalierbarer, produktionsreifer Webanwendungen mit sauberer Architektur und herausragenden Nutzererlebnissen.',
     bio2:
-      'Mit Erfahrung in React, TypeScript, Redux und modernem Tooling konzentriere ich mich auf wiederverwendbare Komponentsysteme, Leistungsoptimierung und wartbare Codebasen. Ich bin außerdem erfahren in der Anwendung KI-gestützter Workflows mit LLMs zur Verbesserung von Produktivität und Problemlösung.',
+      'Mit Erfahrung in React, TypeScript, Python, FastAPI, Node.js und modernem Tooling konzentriere ich mich auf wiederverwendbare Komponentsysteme, Leistungsoptimierung und wartbare Codebasen.',
   },
   experience: {
     eyebrow: 'Mein Werdegang',
@@ -62,12 +51,13 @@ const de: Translations = {
     readMore: 'Mehr lesen',
     showLess: 'Weniger anzeigen',
     featured: 'Empfohlen',
+    docsBtn: 'Docs',
   },
   contact: {
     eyebrow: 'Kontakt aufnehmen',
     heading: 'Kontakt',
     intro:
-      'Ich lese alle Nachrichten. Zögere nicht, dich wegen Möglichkeiten, Kooperationen oder einfach nur zum Hallo-Sagen zu melden – ich melde mich so schnell wie möglich.',
+      'Ich lese alle Nachrichten. Melde dich wegen Moglichkeiten, Kooperationen oder einfach nur zum Hallo-Sagen. Ich melde mich so schnell wie moglich.',
     name: 'Name',
     namePlaceholder: 'Dein Name',
     email: 'E-Mail',
@@ -79,7 +69,7 @@ const de: Translations = {
     send: 'Nachricht senden',
     sending: 'Wird gesendet...',
     successToast: 'Nachricht gesendet!',
-    errorToast: 'Etwas ist schiefgelaufen – bitte versuche es erneut.',
+    errorToast: 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
   },
   footer: {
     rights: 'Alle Rechte vorbehalten.',
