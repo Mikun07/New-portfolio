@@ -4,38 +4,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── CSS design tokens ─────────────────────────────────────── */
+/* CSS design tokens */
 :root {
-  --bg:          #f7f7f7;
-  --bg-card:     #ffffff;
-  --bg-hover:    #f0f0f0;
-  --border:      #e5e5e5;
-  --text-primary:   #111111;
-  --text-secondary: #666666;
-  --text-muted:     #999999;
+  /* Surfaces */
+  --bg:          #f0ede8;
+  --bg-card:     #faf8f5;
+  --bg-hover:    #e8e4dd;
+  --bg-section:  #f5f2ed;
+
+  /* Borders */
+  --border:      #ddd8d0;
+  --border-card: #e5e0d8;
+
+  /* Typography */
+  --text-primary:   #1a1714;
+  --text-secondary: #5c5550;
+  --text-muted:     #9c9490;
+
+  /* Accent */
   --accent:      #f97316;
-  --accent-dim:  hsla(24, 95%, 53%, 0.15);
+  --accent-dim:  hsla(24, 95%, 53%, 0.12);
   --accent-hover:#ea580c;
+
+  /* Status */
   --success:     #22c55e;
   --error:       #ef4444;
+
+  /* Clay shadows: layered soft shadows + inner highlight */
+  --clay-shadow:
+    6px 6px 14px rgba(0,0,0,0.10),
+    -3px -3px 8px rgba(255,255,255,0.85),
+    inset 1px 1px 2px rgba(255,255,255,0.70),
+    inset -1px -1px 2px rgba(0,0,0,0.06);
+
+  --clay-shadow-sm:
+    3px 3px 8px rgba(0,0,0,0.08),
+    -2px -2px 5px rgba(255,255,255,0.80),
+    inset 1px 1px 2px rgba(255,255,255,0.60),
+    inset -1px -1px 2px rgba(0,0,0,0.05);
+
+  --clay-shadow-hover:
+    8px 8px 20px rgba(0,0,0,0.13),
+    -4px -4px 10px rgba(255,255,255,0.90),
+    inset 1px 1px 2px rgba(255,255,255,0.80),
+    inset -1px -1px 2px rgba(0,0,0,0.07);
+
+  --clay-shadow-accent:
+    6px 6px 14px rgba(249,115,22,0.20),
+    -3px -3px 8px rgba(255,255,255,0.85),
+    inset 1px 1px 2px rgba(255,255,255,0.70),
+    inset -1px -1px 2px rgba(249,115,22,0.10);
+
+  --clay-radius: 18px;
+  --clay-radius-sm: 12px;
+  --clay-radius-lg: 24px;
 }
 
 .dark {
-  --bg:          #181818;
-  --bg-card:     #222222;
-  --bg-hover:    #2a2a2a;
-  --border:      #2e2e2e;
-  --text-primary:   #f0f0f0;
-  --text-secondary: #aaaaaa;
-  --text-muted:     #666666;
+  --bg:          #1a1714;
+  --bg-card:     #231f1c;
+  --bg-hover:    #2a2521;
+  --bg-section:  #1e1b18;
+
+  --border:      #332e29;
+  --border-card: #3a342e;
+
+  --text-primary:   #f5f0ea;
+  --text-secondary: #a89e96;
+  --text-muted:     #6b6560;
+
   --accent:      #f97316;
-  --accent-dim:  hsla(24, 95%, 53%, 0.12);
+  --accent-dim:  hsla(24, 95%, 53%, 0.14);
   --accent-hover:#fb923c;
+
   --success:     #22c55e;
   --error:       #ef4444;
+
+  --clay-shadow:
+    6px 6px 14px rgba(0,0,0,0.50),
+    -2px -2px 6px rgba(255,255,255,0.04),
+    inset 1px 1px 2px rgba(255,255,255,0.05),
+    inset -1px -1px 2px rgba(0,0,0,0.30);
+
+  --clay-shadow-sm:
+    3px 3px 8px rgba(0,0,0,0.40),
+    -1px -1px 4px rgba(255,255,255,0.03),
+    inset 1px 1px 2px rgba(255,255,255,0.04),
+    inset -1px -1px 2px rgba(0,0,0,0.25);
+
+  --clay-shadow-hover:
+    8px 8px 20px rgba(0,0,0,0.60),
+    -3px -3px 8px rgba(255,255,255,0.05),
+    inset 1px 1px 2px rgba(255,255,255,0.06),
+    inset -1px -1px 2px rgba(0,0,0,0.35);
+
+  --clay-shadow-accent:
+    6px 6px 14px rgba(249,115,22,0.18),
+    -2px -2px 6px rgba(255,255,255,0.04),
+    inset 1px 1px 2px rgba(255,255,255,0.05),
+    inset -1px -1px 2px rgba(249,115,22,0.12);
 }
 
-/* ── Base ──────────────────────────────────────────────────── */
+/* Base */
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
@@ -54,211 +124,111 @@
   h3 { font-size: 1rem; font-weight: 600; }
 
   a { text-decoration: none; }
-
   * { box-sizing: border-box; }
 }
 
-/* ── Scrollbar ─────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
-/* ── Section titles ────────────────────────────────────────── */
-.section__title {
-  position: relative;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
+/* Clay card utility */
+.clay-card {
+  background-color: var(--bg-card);
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-shadow);
+  border: 1px solid var(--border-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.section__title span {
-  position: relative;
-  z-index: 5;
+.clay-card:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
 }
 
-.section__title::after {
-  content: "";
-  position: absolute;
-  width: 44px;
-  height: 30px;
-  background-color: var(--accent-dim);
-  top: -4px;
-  right: -10px;
-  z-index: 0;
+.clay-card-sm {
+  background-color: var(--bg-card);
+  border-radius: var(--clay-radius-sm);
+  box-shadow: var(--clay-shadow-sm);
+  border: 1px solid var(--border-card);
+  transition: box-shadow 0.25s ease, transform 0.20s ease;
 }
 
-/* ── Geometric accent box ──────────────────────────────────── */
-.geometric-box {
-  position: absolute;
-  width: 14px;
-  height: 14px;
+.clay-card-sm:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.clay-btn-primary {
   background-color: var(--accent);
-  rotate: -30deg;
-}
-
-.geometric-box::after {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border: 3px solid var(--text-primary);
-  left: -5px;
-}
-
-/* ── Services cards ────────────────────────────────────────── */
-.services__card {
-  position: relative;
-  cursor: pointer;
-}
-
-.services__content {
-  height: 100%;
-  padding: 5rem 1.25rem 2.5rem;
-  z-index: 5;
-  position: relative;
-  border: 2px solid var(--border);
-  background-color: var(--bg-card);
-  transition: background-color 0.3s, border-color 0.3s;
-  border-radius: 8px;
-}
-
-.services__card:hover .services__content {
-  border-color: var(--accent);
-}
-
-.services__border {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--accent);
-  top: 0;
-  left: 0;
-  border-radius: 8px;
-  transition: transform 0.3s;
-  opacity: 0.5;
-}
-
-.services__card:hover .services__border {
-  transform: translate(6px, 6px);
-}
-
-.services__icon {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1.25rem;
-}
-
-.services__icon ion-icon {
-  font-size: 2rem;
-  color: var(--accent);
-  z-index: 5;
-  position: relative;
-}
-
-.services__box {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: var(--accent-dim);
-  right: -4px;
-  top: -4px;
-}
-
-.services__title {
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-}
-
-.services__description {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.7;
-}
-
-/* ── Contact form ──────────────────────────────────────────── */
-.contact__mail {
-  position: relative;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
-  transition: background-color 0.3s;
-}
-
-.contact__title {
-  color: var(--text-primary);
-  font-size: 1.25rem;
+  color: #fff;
+  border-radius: var(--clay-radius-sm);
+  box-shadow: var(--clay-shadow-accent);
+  border: none;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
-.contact__form { position: relative; width: 100%; }
-
-.contact__box {
-  position: relative;
-  width: 100%;
-  height: 56px;
+.clay-btn-primary:hover {
+  background-color: var(--accent-hover);
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
 }
 
-.contact__input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: var(--text-primary);
-  background-color: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-  outline: none;
-  transition: border-color 0.3s, background-color 0.3s;
+.clay-btn-outline {
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  border-radius: var(--clay-radius-sm);
+  box-shadow: var(--clay-shadow-sm);
+  border: 1px solid var(--border-card);
+  font-weight: 600;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
-.contact__input::placeholder {
-  color: var(--text-muted);
-}
-
-.contact__input:focus {
-  border-color: var(--accent);
-}
-
-.contact__input:-webkit-autofill {
-  transition: background-color 6000s, color 6000s;
-}
-
-.contact__label {
-  color: var(--text-muted);
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background-color: var(--bg);
-  padding: 4px 6px;
-  pointer-events: none;
-  transition: top 0.3s, opacity 0.3s, background-color 0.3s;
-  opacity: 0;
-  border-radius: 4px;
-}
-
-.contact__form .contact__area { height: 10rem; width: 100%; }
-.contact__area textarea { resize: none; padding-top: 1rem; }
-
-.contact__input:focus::placeholder { opacity: 0; }
-
-.contact__input:focus + .contact__label,
-.contact__input:not(:placeholder-shown):not(:focus) + .contact__label {
-  opacity: 1;
-  top: -16px;
+.clay-btn-outline:hover {
   color: var(--accent);
-  background-color: var(--bg);
+  border-color: var(--accent);
+  box-shadow: var(--clay-shadow-accent);
+  transform: translateY(-1px);
 }
 
-/* ── Toast animations ───────────────────────────────────────── */
+/* Pill / tag */
+.clay-tag {
+  background-color: var(--bg);
+  border-radius: 99px;
+  box-shadow: var(--clay-shadow-sm);
+  border: 1px solid var(--border-card);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  display: inline-block;
+}
+
+/* Section container */
+.section-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-wrap { padding: 6rem 2.5rem; }
+}
+
+/* Section header eyebrow */
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+/* Toast animations */
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(24px); }
   to   { opacity: 1; transform: translateX(0); }
@@ -269,3 +239,45 @@
   to   { width: 0%; }
 }
 
+/* Floating background blobs for clay atmosphere */
+.clay-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Navbar blur backdrop */
+.navbar-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Input clay style */
+.clay-input {
+  background-color: var(--bg);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--clay-radius-sm);
+  box-shadow:
+    inset 2px 2px 5px rgba(0,0,0,0.06),
+    inset -1px -1px 3px rgba(255,255,255,0.70);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  padding: 0.65rem 1rem;
+}
+
+.clay-input:focus {
+  border-color: var(--accent);
+  box-shadow:
+    inset 2px 2px 5px rgba(0,0,0,0.06),
+    inset -1px -1px 3px rgba(255,255,255,0.70),
+    0 0 0 3px var(--accent-dim);
+}
+
+.clay-input::placeholder { color: var(--text-muted); }
