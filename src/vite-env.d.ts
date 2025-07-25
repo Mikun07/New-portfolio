@@ -14,6 +14,7 @@ declare namespace React {
       'ion-icon': IonIconElement
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface HTMLAttributes<T> {
     name?: string
   }
