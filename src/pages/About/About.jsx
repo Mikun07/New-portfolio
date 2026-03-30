@@ -73,7 +73,7 @@ function About() {
                   </Link>
                   <a
                     target="_blank"
-                    href="https://github.com/Mikun07"
+                    href="https://www.linkedin.com/in/ayomikun-festus-olaleye-bab137249/"
                     className=" bg-transparent border-2 border-black hover:border-orange-500 hover:text-orange-500 p-4 items-center text-center rounded-sm text-base"
                   >
                     <ion-icon name="logo-linkedin"></ion-icon>
