@@ -50,6 +50,7 @@ function Home() {
                 designs for usability and functionality. Fully proficient in{" "}
                 <span className=" font-bold">HTML5</span>,{" "}
                 <span className=" font-bold">CSS3</span>,{" "}
+                <span className=" font-bold">TailwindCSS</span>,{" "}
                 <span className=" font-bold">JavaScript</span>,{" "}
                 <span className=" font-bold">TypeScript</span> and other
                 JavaScript frameworks like
