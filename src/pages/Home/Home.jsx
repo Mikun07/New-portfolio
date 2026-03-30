@@ -44,15 +44,11 @@ function Home() {
             <div className="flex text-justify flex-col gap-6">
               <p>
                 <b className="home__description">Frontend Engineer. </b>
-                Knowledgeable and adept at creating successful websites that
-                meet customer needs. Specializing in collaborating with
-                customers to gather requirements, produce plans and improve
-                designs for usability and functionality. Fully proficient in{" "}
+                 specializing in   <span className=" font-bold">React</span> and <span className=" font-bold">TypeScript</span>, focused on building scalable, high-performance, and user-centered web applications. Experienced in delivering responsive interfaces, optimizing performance, and collaborating in agile teams to ship production-ready solutions. Currently pursuing a Master’s in Software Engineering at Blekinge Institute of Technology, with a strong foundation in software architecture, quality engineering, and modern development practices. I am also Fully proficient in{" "}
                 <span className=" font-bold">HTML5</span>,{" "}
                 <span className=" font-bold">CSS3</span>,{" "}
                 <span className=" font-bold">TailwindCSS</span>,{" "}
-                <span className=" font-bold">JavaScript</span>,{" "}
-                <span className=" font-bold">TypeScript</span> and other
+                <span className=" font-bold">JavaScript</span>, and other
                 JavaScript frameworks like
                 <span className=" capitalize font-bold">
                   {" "}
