@@ -39,7 +39,7 @@ function LanguagePicker() {
           }
         }}
       >
-        <span className="text-base leading-none">{current.flag}</span>
+        <ion-icon name="globe-outline" style={{ fontSize: '0.9rem' } as React.CSSProperties}></ion-icon>
         <span className="text-xs">{current.label}</span>
         <ion-icon
           name={open ? 'chevron-down-outline' : 'chevron-up-outline'}
@@ -74,7 +74,6 @@ function LanguagePicker() {
                   if (!active) e.currentTarget.style.backgroundColor = 'transparent'
                 }}
               >
-                <span className="text-base leading-none">{lang.flag}</span>
                 <span>{lang.label}</span>
                 {active && (
                   <ion-icon

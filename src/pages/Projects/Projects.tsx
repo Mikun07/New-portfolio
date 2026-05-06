@@ -5,7 +5,7 @@ interface Project {
   id: number
   img?: string
   github: string
-  href: string
+  href?: string
   title: string
   subtitle: string
   description: string
@@ -29,11 +29,11 @@ const projects: Project[] = [
     id: 2,
     github: 'https://github.com/Mikun07/Product_Search.git',
     href: 'https://productseacrh.netlify.app',
-    title: 'Product Search & Comparison',
+    title: 'MikunStore: E-Commerce Platform',
     subtitle: 'Web Application',
     description:
-      'Product search and comparison platform hosted on Docker with Vite. Implements end-to-end testing with Cypress and full project documentation on GitHub.',
-    tags: ['React', 'Vite', 'Docker', 'Cypress', 'TypeScript'],
+      'Full-featured e-commerce app built with React 18 and Vite. Browse 100 products across 9 categories with search, filtering, sorting, and pagination. Features cart management, favourites, side-by-side product comparison, multi-currency pricing, 5-language i18n, dark/light mode, and a jsPDF-generated receipt on checkout. End-to-end tested with Cypress.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'React Router', 'Context API', 'jsPDF', 'Cypress'],
   },
   {
     id: 3,
@@ -68,12 +68,11 @@ const projects: Project[] = [
   {
     id: 6,
     github: 'https://github.com/Mikun07/New-portfolio.git',
-    href: 'https://festus-olaleye-ayomikun.netlify.app',
     title: 'Developer Portfolio',
     subtitle: 'Web Application',
     description:
-      'This portfolio built with React, TypeScript, and Tailwind CSS. Features dark/light mode, responsive layout, useReducer-driven contact form, EmailJS integration, and Vitest unit tests.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Vitest', 'EmailJS'],
+      'Modern, fully responsive personal portfolio built with React 18, TypeScript, and Tailwind CSS. Features dark/light mode, a global language switcher (EN / DE / FR / NL / SV), a custom toast notification system, useReducer-driven contact form with EmailJS integration, and Vitest unit tests.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Vitest', 'EmailJS', 'i18n'],
   },
 ]
 

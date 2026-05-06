@@ -11,7 +11,7 @@ interface CardLabels {
 interface ProjectCardProps {
   img?: string
   github: string
-  href: string
+  href?: string
   title: string
   subtitle: string
   description: string
@@ -65,15 +65,17 @@ function ProjectCard({ img, github, href, title, subtitle, description, tags, fe
             <ion-icon name="logo-github"></ion-icon>
             {labels.code}
           </a>
-          <a
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white border border-white/30 hover:border-white transition-colors duration-200"
-          >
-            <ion-icon name="open-outline"></ion-icon>
-            {labels.live}
-          </a>
+          {href && (
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white border border-white/30 hover:border-white transition-colors duration-200"
+            >
+              <ion-icon name="open-outline"></ion-icon>
+              {labels.live}
+            </a>
+          )}
         </div>
 
         {/* Featured badge */}

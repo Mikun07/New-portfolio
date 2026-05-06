@@ -4,23 +4,24 @@ import en from '../i18n/translations/en'
 import sv from '../i18n/translations/sv'
 import fr from '../i18n/translations/fr'
 import nl from '../i18n/translations/nl'
+import de from '../i18n/translations/de'
 
-export type Locale = 'en' | 'sv' | 'fr' | 'nl'
+export type Locale = 'en' | 'sv' | 'fr' | 'nl' | 'de'
 
 export interface Language {
   code: Locale
   label: string
-  flag: string
 }
 
 export const languages: Language[] = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'sv', label: 'Svenska', flag: '🇸🇪' },
-  { code: 'fr', label: 'Français', flag: '🇫🇷' },
-  { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
+  { code: 'en', label: 'English' },
+  { code: 'de', label: 'Deutsch' },
+  { code: 'fr', label: 'Français' },
+  { code: 'nl', label: 'Nederlands' },
+  { code: 'sv', label: 'Svenska' },
 ]
 
-const translationMap: Record<Locale, Translations> = { en, sv, fr, nl }
+const translationMap: Record<Locale, Translations> = { en, sv, fr, nl, de }
 
 interface LanguageContextValue {
   locale: Locale

@@ -75,7 +75,7 @@ function Contact() {
     })
   }
 
-  function sendMessage(e: React.FormEvent<HTMLFormElement>) {
+  function sendMessage(e: { preventDefault(): void }) {
     e.preventDefault()
     dispatch({ type: 'SET_SENDING', value: true })
 

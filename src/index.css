@@ -16,6 +16,8 @@
   --accent:      #f97316;
   --accent-dim:  hsla(24, 95%, 53%, 0.15);
   --accent-hover:#ea580c;
+  --success:     #22c55e;
+  --error:       #ef4444;
 }
 
 .dark {
@@ -29,6 +31,8 @@
   --accent:      #f97316;
   --accent-dim:  hsla(24, 95%, 53%, 0.12);
   --accent-hover:#fb923c;
+  --success:     #22c55e;
+  --error:       #ef4444;
 }
 
 /* ── Base ──────────────────────────────────────────────────── */

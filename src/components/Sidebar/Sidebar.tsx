@@ -61,7 +61,7 @@ function Sidebar() {
           />
           <span
             className="absolute bottom-1 right-1 w-3 h-3 rounded-full border-2"
-            style={{ backgroundColor: '#22c55e', borderColor: 'var(--bg-card)' }}
+            style={{ backgroundColor: 'var(--success)', borderColor: 'var(--bg-card)' }}
           />
         </div>
 

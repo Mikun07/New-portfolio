@@ -36,8 +36,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }
 
   const colorMap: Record<ToastType, string> = {
-    success: '#22c55e',
-    error: '#ef4444',
+    success: 'var(--success)',
+    error: 'var(--error)',
     info: 'var(--accent)',
   }
 
