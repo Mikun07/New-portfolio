@@ -17,7 +17,7 @@ const projects: Project[] = [
   {
     id: 1,
     github: 'https://github.com/Mikun07/ffsd-travels',
-    href: 'https://festus-olaleye-ayomikun.netlify.app',
+    href: 'https://ffsdtravels.com/',
     title: 'FFSD Travels: Travel Booking Platform',
     subtitle: 'Featured Project',
     description:
@@ -39,11 +39,11 @@ const projects: Project[] = [
     id: 3,
     github: 'https://github.com/Mikun07/Movie-Recommendation-Website.git',
     href: 'https://mikun-films.netlify.app',
-    title: 'Movie Recommendation Platform',
+    title: 'CineVault: Movie Recommendation Platform',
     subtitle: 'Web Application',
     description:
-      'Movie recommendation system by genre built with React. Implements Redux for state management, local storage for data persistence, and Tailwind CSS for responsive styling.',
-    tags: ['React', 'Redux', 'Tailwind CSS', 'JavaScript'],
+      'Responsive movie discovery app built with React 18 and TypeScript, powered by the TMDB API. Browse movies, filter by genre with multi-select, paginate results, and view full details including ratings, runtime, and production info. Features a rotating hero carousel, dark/light mode, and a 5-language switcher (EN, FR, NL, DE, SV). State managed with Redux Toolkit; API layer via Axios with automatic auth and language headers.',
+    tags: ['React', 'TypeScript', 'Redux Toolkit', 'Axios', 'Tailwind CSS', 'TMDB API', 'React Router'],
   },
   {
     id: 4,
