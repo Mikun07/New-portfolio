@@ -22,6 +22,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ img, github, href, title, subtitle, description, tags, featured, labels }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false)
+  const needsToggle = description.length > 220
 
   return (
     <article
@@ -114,21 +115,23 @@ function ProjectCard({ img, github, href, title, subtitle, description, tags, fe
               color: 'var(--text-secondary)',
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: expanded ? 'unset' : 4,
-              overflow: expanded ? 'visible' : 'hidden',
+              WebkitLineClamp: needsToggle && !expanded ? 4 : 'unset',
+              overflow: needsToggle && !expanded ? 'hidden' : 'visible',
             }}
           >
             {description}
           </p>
-          <button
-            onClick={() => setExpanded((v) => !v)}
-            className="self-start text-xs font-semibold mt-0.5 transition-opacity duration-200"
-            style={{ color: 'var(--accent)' }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-          >
-            {expanded ? labels.showLess : labels.readMore}
-          </button>
+          {needsToggle && (
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              className="self-start text-xs font-semibold mt-0.5 transition-opacity duration-200"
+              style={{ color: 'var(--accent)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.75')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              {expanded ? labels.showLess : labels.readMore}
+            </button>
+          )}
         </div>
 
         {/* Tech tags — pinned to bottom */}
