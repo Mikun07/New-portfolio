@@ -38,7 +38,7 @@ function formReducer(state: FormState, action: FormAction): FormState {
 
 describe('formReducer', () => {
   it('returns initial state unchanged for unknown action', () => {
-    // @ts-expect-error — intentionally passing an unknown action to test default branch
+    // @ts-expect-error —intentionally passing an unknown action to test default branch
     const result = formReducer(initialState, { type: 'UNKNOWN' })
     expect(result).toEqual(initialState)
   })
