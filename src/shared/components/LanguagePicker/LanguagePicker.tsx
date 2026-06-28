@@ -39,18 +39,17 @@ function LanguagePicker() {
           }
         }}
       >
-        <ion-icon name="globe-outline" style={{ fontSize: '0.9rem' } as React.CSSProperties}></ion-icon>
+        <ion-icon name="globe-outline" style={{ fontSize: '0.9rem' }}></ion-icon>
         <span className="text-xs">{current.label}</span>
         <ion-icon
-          name={open ? 'chevron-down-outline' : 'chevron-up-outline'}
-          style={{ fontSize: '0.7rem' } as React.CSSProperties}
+          name={open ? 'chevron-up-outline' : 'chevron-down-outline'}
+          style={{ fontSize: '0.7rem' }}
         ></ion-icon>
       </button>
 
-      {/* Drop-UP menu, positioned above the trigger */}
       {open && (
         <div
-          className="absolute bottom-full right-0 mb-2 w-44 rounded-xl border overflow-hidden z-50 shadow-lg"
+          className="absolute top-full right-0 mt-2 w-44 rounded-xl border overflow-hidden z-50 shadow-lg"
           style={{
             backgroundColor: 'var(--bg-card)',
             borderColor: 'var(--border)',
@@ -78,7 +77,7 @@ function LanguagePicker() {
                 {active && (
                   <ion-icon
                     name="checkmark-outline"
-                    style={{ marginLeft: 'auto', color: 'var(--accent)' } as React.CSSProperties}
+                    style={{ marginLeft: 'auto', color: 'var(--accent)' }}
                   ></ion-icon>
                 )}
               </button>

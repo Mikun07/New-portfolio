@@ -1,0 +1,62 @@
+<svg width="160" height="56" viewBox="0 0 160 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="160" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#f97316" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Badge pill -->
+  <rect x="0" y="0" width="160" height="56" rx="16" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  <!-- Gloss overlay -->
+  <rect x="0" y="0" width="160" height="28" rx="16" fill="url(#gloss)"/>
+  <!-- Bottom edge fill to square off gloss bottom -->
+  <rect x="0" y="16" width="160" height="12" fill="url(#gloss)"/>
+
+  <!-- Monogram: AFO -->
+  <!-- A -->
+  <text
+    x="18"
+    y="40"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="32"
+    font-weight="700"
+    fill="#ffffff"
+    letter-spacing="-1"
+  >A</text>
+
+  <!-- Thin separator dot -->
+  <circle cx="64" cy="28" r="2.5" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- F — slightly lighter to create hierarchy -->
+  <text
+    x="73"
+    y="40"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="28"
+    font-weight="400"
+    fill="rgba(255,255,255,0.82)"
+    letter-spacing="-1"
+  >F</text>
+
+  <!-- Thin separator dot -->
+  <circle cx="104" cy="28" r="2.5" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- O — slightly lighter to create hierarchy -->
+  <text
+    x="113"
+    y="40"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="28"
+    font-weight="400"
+    fill="rgba(255,255,255,0.82)"
+    letter-spacing="-1"
+  >O</text>
+</svg>
