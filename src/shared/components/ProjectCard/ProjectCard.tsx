@@ -34,7 +34,7 @@ interface DropdownPos {
   top: number
   left: number
   width: number
-  openUp: boolean
+  maxHeight: number
 }
 
 function DocsDropdown({
@@ -54,17 +54,31 @@ function DocsDropdown({
   useEffect(() => {
     if (!triggerRef.current) return
     const rect = triggerRef.current.getBoundingClientRect()
-    const spaceBelow = window.innerHeight - rect.bottom
-    const spaceAbove = rect.top
-    const maxMenuHeight = 260
-    const openUp = spaceBelow < maxMenuHeight && spaceAbove > spaceBelow
+    const viewportPadding = 16
+    const preferredMaxHeight = 280
+    const estimatedHeight = Math.min(preferredMaxHeight, Math.max(docs.length * 40, 120))
+    const spaceBelow = window.innerHeight - rect.bottom - viewportPadding
+    const spaceAbove = rect.top - viewportPadding
+    const openUp = spaceBelow < estimatedHeight && spaceAbove > spaceBelow
+    const availableHeight = Math.max(openUp ? spaceAbove : spaceBelow, 120)
+    const maxHeight = Math.min(estimatedHeight, availableHeight)
+    const viewportWidth = window.innerWidth
+    const width = Math.min(
+      Math.max(rect.width, 240),
+      viewportWidth - viewportPadding * 2
+    )
+    const left = Math.min(
+      Math.max(rect.left + window.scrollX, window.scrollX + viewportPadding),
+      window.scrollX + viewportWidth - width - viewportPadding
+    )
+
     setPos({
       top: openUp
-        ? rect.top + window.scrollY - Math.min(maxMenuHeight, spaceAbove - 16) - 8
+        ? rect.top + window.scrollY - maxHeight - 8
         : rect.bottom + window.scrollY + 8,
-      left: rect.left + window.scrollX,
-      width: Math.max(rect.width, 220),
-      openUp,
+      left,
+      width,
+      maxHeight,
     })
   }, [docs.length, triggerRef])
 
@@ -83,11 +97,18 @@ function DocsDropdown({
       if (menuRef.current?.contains(e.target as Node)) return
       onClose()
     }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') onClose()
+    }
     document.addEventListener('mousedown', onMouseDown)
+    document.addEventListener('keydown', onKeyDown)
     window.addEventListener('scroll', onScroll, true)
+    window.addEventListener('resize', onClose)
     return () => {
       document.removeEventListener('mousedown', onMouseDown)
+      document.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('scroll', onScroll, true)
+      window.removeEventListener('resize', onClose)
     }
   }, [onClose, triggerRef])
 
@@ -96,27 +117,37 @@ function DocsDropdown({
   return createPortal(
     <div
       ref={menuRef}
+      role="menu"
+      aria-label="Project documents"
       style={{
         position: 'absolute',
         top: pos.top,
         left: pos.left,
-        minWidth: pos.width,
+        width: pos.width,
         zIndex: 9999,
-        borderRadius: '14px',
+        borderRadius: '12px',
         overflow: 'hidden',
         boxShadow: 'var(--clay-shadow)',
         backgroundColor: 'var(--bg-card)',
         border: '1px solid var(--border-card)',
       }}
     >
-      <div style={{ maxHeight: '260px', overflowY: 'auto', overflowX: 'hidden' }}>
+      <div style={{ maxHeight: pos.maxHeight, overflowY: 'auto', overflowX: 'hidden' }}>
         {(docs ?? []).map((doc) => (
           <button
             key={doc.url}
             type="button"
+            role="menuitem"
             onClick={() => { onDownload(doc); onClose() }}
-            className="flex items-center gap-2 px-4 py-2.5 text-xs font-medium transition-colors duration-150 w-full text-left"
-            style={{ color: 'var(--text-primary)', background: 'none', border: 'none', cursor: 'pointer', width: '100%' }}
+            className="flex w-full items-start gap-2 px-4 py-2.5 text-left text-xs font-medium leading-snug transition-colors duration-150"
+            style={{
+              color: 'var(--text-primary)',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              whiteSpace: 'normal',
+              overflowWrap: 'anywhere',
+            }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'var(--accent-dim)'
               e.currentTarget.style.color = 'var(--accent)'
@@ -126,7 +157,7 @@ function DocsDropdown({
               e.currentTarget.style.color = 'var(--text-primary)'
             }}
           >
-            <ion-icon name="download-outline" style={{ flexShrink: '0' }}></ion-icon>
+            <ion-icon name="download-outline" style={{ flexShrink: '0', marginTop: '1px' }}></ion-icon>
             {doc.label}
           </button>
         ))}
@@ -142,12 +173,15 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
   const triggerRef = useRef<HTMLButtonElement>(null)
   const { showToast } = useToast()
   const needsToggle = description.length > 200
-  const hasDocs = docs && docs.length > 0
+  const docEntries = docs ?? []
+  const docCount = docEntries.length
+  const hasDocs = docCount > 0
+  const singleDoc = docCount === 1 ? docEntries[0] : undefined
   const closeDropdown = useCallback(() => setDocsOpen(false), [])
 
   const handleDownload = useCallback(async (doc: DocEntry) => {
     if (doc.url.endsWith('.md')) {
-      showToast(`Preparing "${doc.label}" as PDF…`, 'info')
+      showToast(`Preparing "${doc.label}" as PDF...`, 'info')
       try {
         await downloadAsPdf(doc.url, doc.label)
         showToast(`"${doc.label}" downloaded!`, 'success')
@@ -164,7 +198,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
   }, [showToast])
 
   return (
-    <article className="clay-card flex flex-col overflow-hidden group">
+    <article className="clay-card group flex h-full flex-col overflow-hidden">
 
       {/* Thumbnail / placeholder */}
       <div className="relative overflow-hidden h-36 shrink-0" style={{ borderRadius: 'var(--clay-radius) var(--clay-radius) 0 0' }}>
@@ -192,7 +226,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
             href={github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-white border border-white/30 hover:border-white transition-colors duration-200"
+            className="flex h-8 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-white/30 px-3 text-xs font-semibold text-white transition-colors duration-200 hover:border-white"
           >
             <ion-icon name="logo-github"></ion-icon>
             {labels.code}
@@ -202,7 +236,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-white border border-white/30 hover:border-white transition-colors duration-200"
+              className="flex h-8 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-white/30 px-3 text-xs font-semibold text-white transition-colors duration-200 hover:border-white"
             >
               <ion-icon name="open-outline"></ion-icon>
               {labels.live}
@@ -272,12 +306,12 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
         </div>
 
         {/* Action row */}
-        <div className="flex flex-wrap gap-2 pt-1 items-center">
+        <div className="flex min-h-[34px] flex-wrap items-center gap-2 pt-1">
           <a
             href={github}
             target="_blank"
             rel="noreferrer"
-            className="clay-btn-outline flex items-center gap-1.5 px-3 py-1.5 text-xs"
+            className="clay-btn-outline flex h-8 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
           >
             <ion-icon name="logo-github"></ion-icon>
             {labels.code}
@@ -287,20 +321,33 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="clay-btn-outline flex items-center gap-1.5 px-3 py-1.5 text-xs"
+              className="clay-btn-outline flex h-8 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
             >
               <ion-icon name="open-outline"></ion-icon>
               {labels.live}
             </a>
           )}
 
-          {hasDocs && (
+          {singleDoc && (
+            <button
+              type="button"
+              onClick={() => handleDownload(singleDoc)}
+              className="clay-btn-primary flex h-8 max-w-full items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
+              aria-label={`Download ${singleDoc.label}`}
+              title={singleDoc.label}
+            >
+              <ion-icon name="download-outline"></ion-icon>
+              <span className="truncate">{singleDoc.label}</span>
+            </button>
+          )}
+
+          {hasDocs && docCount > 1 && (
             <>
               <button
                 ref={triggerRef}
                 type="button"
                 onClick={() => setDocsOpen((v) => !v)}
-                className="clay-btn-primary flex items-center gap-1.5 px-3 py-1.5 text-xs"
+                className="clay-btn-primary flex h-8 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
                 aria-haspopup="true"
                 aria-expanded={docsOpen}
               >
@@ -314,7 +361,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
 
               {docsOpen && (
                 <DocsDropdown
-                  docs={docs}
+                  docs={docEntries}
                   triggerRef={triggerRef}
                   onClose={closeDropdown}
                   onDownload={handleDownload}
