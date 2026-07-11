@@ -11,7 +11,7 @@
 | FR-001 | US-001 | `src/features/home/Home.tsx` | Visual / E2E (planned) |
 | FR-002 | US-005 | `src/features/home/Home.tsx` | Visual |
 | FR-003 | US-001 | `src/features/home/Home.tsx` | Visual |
-| FR-004 | US-002 | `src/features/home/Home.tsx`, `src/shared/components/Sidebar/Sidebar.tsx` | Manual |
+| FR-004 | US-002 | `src/features/home/Home.tsx` | Manual |
 | FR-005 | US-003 | `src/features/home/Home.tsx` | Visual |
 | FR-006 | US-003 | `src/features/about/About.tsx` | Visual |
 | FR-007 | US-004 | `src/features/about/About.tsx` | Visual |

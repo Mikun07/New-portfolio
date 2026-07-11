@@ -29,4 +29,4 @@ Use a homegrown approach: `src/i18n/translations/en.ts` exports a typed `Transla
 **Negative:**
 - Adding a new language requires creating a new `.ts` file and importing it in `LanguageProvider`.
 - No support for pluralisation rules (not needed for this content).
-- Translation strings are loaded eagerly (all 5 locales in the initial bundle) - acceptable for a portfolio of this size (~237 KB JS bundle).
+- Translation strings are loaded eagerly (all 5 locales in the initial bundle) - acceptable for the current primary JS gzip size.

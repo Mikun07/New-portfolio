@@ -28,5 +28,5 @@ Use `useReducer` with three action types: `SET_FIELD`, `SET_SENDING`, and `RESET
 - `RESET` action clears all fields in a single dispatch after successful submission.
 
 **Negative:**
-- The test file mirrors the reducer and types inline (with a comment noting the source). If the reducer is refactored into a separate module, the test file must be updated.
 - Slightly more verbose than `useState` for a simple form.
+- The reducer is now a separate module, so developers must import it rather than editing form state logic inline in `Contact.tsx`.

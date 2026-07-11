@@ -10,7 +10,7 @@ A personal portfolio site needs to present 6 sections (Home, About, Experience, 
 
 ## Decision
 
-Use `react-scroll` for smooth anchor-based navigation on a single HTML document. React Router is installed as a dependency but not used for navigation.
+Use `react-scroll` for smooth anchor-based navigation on a single HTML document.
 
 ## Options Considered
 
@@ -31,4 +31,4 @@ Use `react-scroll` for smooth anchor-based navigation on a single HTML document.
 - Browser history does not reflect section position (no pushState on scroll).
 
 **Neutral:**
-- `react-router-dom` remains in `package.json` but is unused. It may be added for future project detail pages without restructuring.
+- If project detail pages are added later, routing can be introduced through a new ADR.

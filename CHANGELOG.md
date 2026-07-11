@@ -15,6 +15,24 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [Unreleased]
+
+### Added
+- `.env.example` for reproducible EmailJS environment setup.
+- `LICENSE` with all rights reserved.
+- `SECURITY.md` with vulnerability reporting guidance.
+- Governance audit and missing framework reports for risk, security, SEO, frontend, backend scope, database scope, implementation, operations, GitHub readiness, and interview preparation.
+- `src/features/contact/formReducer.ts` so reducer behavior is tested from the production module.
+
+### Changed
+- Updated CI and Netlify runtime documentation to Node `22.12.0`.
+- Updated README with project status, architecture, setup, quality gates, deployment, limitations, future work, and documentation map.
+- Updated stale architecture, requirements, design, quality, and DevOps documentation to match the current source.
+- Removed unused runtime dependencies and added direct TypeScript ESLint dependencies.
+
+### Security
+- Added local environment variable template and publication security guidance.
+
 ## [1.0.0] - 2026-06-28
 
 ### Added

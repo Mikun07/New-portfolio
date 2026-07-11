@@ -12,10 +12,11 @@
 |--------|-------|-------------------|
 | Unit test count | 6 | `npm test` output |
 | Unit test pass rate | 100% | `npm test` output |
-| TypeScript errors | 0 | `npx tsc --noEmit` |
+| TypeScript errors | 0 | `npm run typecheck` |
 | ESLint warnings | 0 | `npm run lint` |
-| JS bundle size (gzip) | ~71 KB | `vite build` output |
-| CSS bundle size (gzip) | ~4.6 KB | `vite build` output |
+| Primary JS bundle size (gzip) | ~74.6 KB | `vite build` output |
+| CSS bundle size (gzip) | ~4.7 KB | `vite build` output |
+| PDF tooling chunks | Lazy-loaded on document download | `vite build` output |
 
 ---
 
@@ -26,7 +27,7 @@
 | Unit test coverage | ≥ 70% line | Establish a baseline that forces future contributors to maintain coverage |
 | Lighthouse Performance | ≥ 90 desktop | Visitor experience; signals engineering quality to technical reviewers |
 | Lighthouse Accessibility | ≥ 90 | WCAG 2.1 AA compliance (NFR-003) |
-| JS bundle (gzip) | ≤ 100 KB | Current 71 KB; headroom for new features |
+| JS bundle (gzip) | <= 100 KB | Current primary bundle is ~74.6 KB gzip; PDF tooling is lazy-loaded |
 | Build duration (CI) | ≤ 2 min | Current CI run takes ~60 s total; fast feedback is a quality signal |
 
 ---
@@ -37,7 +38,7 @@
 
 **Lighthouse Performance** - Google Lighthouse composite score measuring First Contentful Paint, Largest Contentful Paint, Total Blocking Time, Cumulative Layout Shift, and Speed Index.
 
-**Bundle Size** - gzipped size of `dist/assets/index-*.js`. Measured from Vite build output. Does not include image assets (images are loaded lazily by the browser).
+**Bundle Size** - gzipped size of the primary `dist/assets/index-*.js` bundle. Measured from Vite build output. PDF generation libraries are split into lazy-loaded chunks and are not required for first-page interaction.
 
 **Build Duration** - wall-clock time for the full CI pipeline (type-check + lint + test + build) on `ubuntu-latest`. Measured by GitHub Actions step timings.
 

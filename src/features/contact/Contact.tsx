@@ -1,41 +1,8 @@
-import { useReducer } from 'react'
+import { useReducer, type ChangeEvent, type FormEvent } from 'react'
 import { useLanguage } from '../../core/providers/LanguageProvider'
 import { useToast } from '../../core/providers/ToastProvider'
 import { sendContactEmail } from '../../infrastructure/email/emailService'
-
-interface FormState {
-  name: string
-  email: string
-  subject: string
-  message: string
-  sending: boolean
-}
-
-type FormAction =
-  | { type: 'SET_FIELD'; field: keyof Omit<FormState, 'sending'>; value: string }
-  | { type: 'SET_SENDING'; value: boolean }
-  | { type: 'RESET' }
-
-const initialState: FormState = {
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
-  sending: false,
-}
-
-function formReducer(state: FormState, action: FormAction): FormState {
-  switch (action.type) {
-    case 'SET_FIELD':
-      return { ...state, [action.field]: action.value }
-    case 'SET_SENDING':
-      return { ...state, sending: action.value }
-    case 'RESET':
-      return initialState
-    default:
-      return state
-  }
-}
+import { formReducer, initialFormState, type FormField } from './formReducer'
 
 const contactDetails = [
   {
@@ -79,18 +46,18 @@ const socialLinks = [
 function Contact() {
   const { t } = useLanguage()
   const { showToast } = useToast()
-  const [state, dispatch] = useReducer(formReducer, initialState)
+  const [state, dispatch] = useReducer(formReducer, initialFormState)
   const { name, email, subject, message, sending } = state
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     dispatch({
       type: 'SET_FIELD',
-      field: e.target.name as keyof Omit<FormState, 'sending'>,
+      field: e.target.name as FormField,
       value: e.target.value,
     })
   }
 
-  function sendMessage(e: { preventDefault(): void }) {
+  function sendMessage(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     dispatch({ type: 'SET_SENDING', value: true })
 

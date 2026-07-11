@@ -12,7 +12,7 @@ Quality gates are mandatory checks that must pass before any code merges to `mai
 
 | Property | Value |
 |----------|-------|
-| Tool | `tsc --noEmit` |
+| Tool | `npm run typecheck` (`tsc --noEmit`) |
 | Threshold | 0 type errors |
 | Blocks merge? | Yes |
 | Rationale | TypeScript strict mode is the primary correctness guard. Compile errors mean a contract has been broken - a missing prop, a wrong type, an unresolved import. |
@@ -33,7 +33,7 @@ Quality gates are mandatory checks that must pass before any code merges to `mai
 | Tool | `vitest run` |
 | Threshold | All tests pass (currently 6/6) |
 | Blocks merge? | Yes |
-| Rationale | Any failing test indicates a regression in tested business logic. The formReducer tests are fast (~9 ms) and have no external dependencies. |
+| Rationale | Any failing test indicates a regression in tested form state behavior. The reducer tests import the production reducer module and have no external dependencies. |
 
 ## Gate 4: Build
 

@@ -10,19 +10,19 @@
 
 ### ThemeProvider
 **Responsibility:** Manages light/dark theme state, persists to `localStorage`, and applies the `dark` class to `<html>`.
-**Public interface:** `ThemeProvider` (React component), `useTheme()` → `{ theme: 'light' | 'dark', toggleTheme: () => void }`
-**Consumed by:** `App.tsx`, `Navbar`, `Sidebar`
+**Public interface:** `ThemeProvider` (React component), `useTheme()` returns `{ theme: 'light' | 'dark', toggleTheme: () => void }`
+**Consumed by:** `App.tsx`, `Navbar`
 **Dependencies:** React only
 
 ### LanguageProvider
 **Responsibility:** Manages active locale, maps locale to translation object, persists to `localStorage`.
-**Public interface:** `LanguageProvider` (React component), `useLanguage()` → `{ locale, setLocale, t: Translations }`, `languages` array
-**Consumed by:** `App.tsx`, all feature pages, `Navbar`, `Sidebar`, `Footer`, `LanguagePicker`
+**Public interface:** `LanguageProvider` (React component), `useLanguage()` returns `{ locale, setLocale, t: Translations }`, `languages` array
+**Consumed by:** `App.tsx`, all feature pages, `Navbar`, `Footer`, `LanguagePicker`
 **Dependencies:** React, `src/i18n/translations/*`
 
 ### ToastProvider
 **Responsibility:** Manages a list of active toast notifications with auto-dismiss after 5 seconds and a manual dismiss button.
-**Public interface:** `ToastProvider` (React component), `useToast()` → `{ showToast(message, type) }`
+**Public interface:** `ToastProvider` (React component), `useToast()` returns `{ showToast(message, type) }`
 **Consumed by:** `App.tsx`, `Contact`
 **Dependencies:** React only
 
@@ -61,10 +61,16 @@
 **Dependencies:** `LanguageProvider`, `ProjectCard`
 
 ### contact/Contact
-**Responsibility:** Renders contact details, manages the contact form via `useReducer`, and sends messages via `emailService`.
+**Responsibility:** Renders contact details, consumes the contact form reducer, and sends messages via `emailService`.
 **Public interface:** `Contact` (default export)
 **Consumed by:** `App.tsx`
-**Dependencies:** `LanguageProvider`, `ToastProvider`, `emailService`
+**Dependencies:** `LanguageProvider`, `ToastProvider`, `formReducer`, `emailService`
+
+### contact/formReducer
+**Responsibility:** Owns contact form state transitions for field updates, sending state, and reset behavior.
+**Public interface:** `formReducer`, `initialFormState`, `FormState`, `FormAction`, `FormField`
+**Consumed by:** `Contact`, `src/test/formReducer.test.ts`
+**Dependencies:** None
 
 ---
 
@@ -76,12 +82,6 @@
 **Consumed by:** `App.tsx`
 **Dependencies:** `ThemeProvider`, `LanguageProvider`, `LanguagePicker`, `react-scroll`
 
-### Sidebar
-**Responsibility:** Desktop-only sticky right panel with profile, social links, contact info, theme toggle, and language picker.
-**Public interface:** `Sidebar` (default export)
-**Consumed by:** `App.tsx`
-**Dependencies:** `ThemeProvider`, `LanguageProvider`, `LanguagePicker`, `assets/img/Dp.jpg`
-
 ### Footer
 **Responsibility:** Displays copyright year and "Built with React & TypeScript" credit.
 **Public interface:** `Footer` (default export)
@@ -92,12 +92,12 @@
 **Responsibility:** Reusable card for displaying a project with thumbnail/placeholder, hover overlay, expandable description, tech tags, and action links.
 **Public interface:** `ProjectCard` (default export), accepts `ProjectCardProps`
 **Consumed by:** `features/projects/Projects`
-**Dependencies:** React only
+**Dependencies:** React, `ToastProvider`, `downloadAsPdf`
 
 ### LanguagePicker
 **Responsibility:** Drop-up language selector that dispatches locale changes via `LanguageProvider`.
 **Public interface:** `LanguagePicker` (default export)
-**Consumed by:** `Navbar`, `Sidebar`
+**Consumed by:** `Navbar`
 **Dependencies:** `LanguageProvider`
 
 ### ScrollToTop

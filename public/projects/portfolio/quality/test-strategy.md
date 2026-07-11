@@ -33,11 +33,13 @@ Each test layer targets a specific category of risk.
 
 ## Unit Testing (Current - Vitest)
 
-**What is tested:** The `formReducer` pure function in `src/features/contact/Contact.tsx`.
+**What is tested:** The `formReducer` pure function in `src/features/contact/formReducer.ts`.
 
 **Why:** The reducer manages all contact form state transitions. It is pure (no side effects), making it trivial to test without React.
 
 **Test file:** `src/test/formReducer.test.ts`
+
+**Implementation under test:** The test imports the same reducer module used by `Contact.tsx`.
 
 **Coverage:**
 | Test | Action | Assertion |
@@ -49,7 +51,7 @@ Each test layer targets a specific category of risk.
 | SET_SENDING false | From `sending: true` | `sending` becomes `false` |
 | RESET | Dirty state | Returns exactly `initialState` |
 
-**Framework:** Vitest 4.1.5 with `@vitest-environment node` (no DOM needed for pure reducer).
+**Framework:** Vitest with `@vitest-environment node` (no DOM needed for pure reducer).
 
 **Run:** `npm test`
 
@@ -72,7 +74,7 @@ Each test layer targets a specific category of risk.
 
 **Scope:** Full user journeys in a real browser.
 
-**Framework:** Cypress (referenced in portfolio but not yet configured in this repo).
+**Framework candidate:** Playwright or Cypress. The final tool will be selected when browser E2E work starts.
 
 **Priority journeys:**
 1. Load page → verify all 6 sections render without errors.

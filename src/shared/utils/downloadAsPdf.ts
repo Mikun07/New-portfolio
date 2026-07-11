@@ -1,8 +1,10 @@
-import { marked } from 'marked'
-import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas'
-
 export async function downloadAsPdf(url: string, filename: string): Promise<void> {
+  const [{ marked }, { default: jsPDF }, { default: html2canvas }] = await Promise.all([
+    import('marked'),
+    import('jspdf'),
+    import('html2canvas'),
+  ])
+
   const res = await fetch(url)
   if (!res.ok) throw new Error(`Failed to fetch ${url}`)
   const md = await res.text()

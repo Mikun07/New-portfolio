@@ -71,7 +71,7 @@ The `src/` directory was reorganised from flat `pages/` + `components/` + `conte
 | `npx tsc --noEmit` | 0 errors |
 | `npm run lint` | 0 errors, 0 warnings |
 | `npm test` | 6/6 passed |
-| `npm run build` | Success (dist/ produced, 237 KB JS, 17 KB CSS) |
+| `npm run build` | Success (dist/ produced, primary JS gzip below 100 KB) |
 
 ---
 

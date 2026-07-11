@@ -62,6 +62,33 @@ interface EmailPayload {
 
 ---
 
+## Contact Form Reducer
+
+Defined in `src/features/contact/formReducer.ts`.
+
+```typescript
+interface FormState {
+  name: string
+  email: string
+  subject: string
+  message: string
+  sending: boolean
+}
+
+type FormAction =
+  | { type: 'SET_FIELD'; field: FormField; value: string }
+  | { type: 'SET_SENDING'; value: boolean }
+  | { type: 'RESET' }
+```
+
+**Contract:**
+- `SET_FIELD` updates one text field without mutating the previous state.
+- `SET_SENDING` updates only the submit-in-progress flag.
+- `RESET` returns the form to `initialFormState`.
+- The reducer is imported by both `Contact.tsx` and `src/test/formReducer.test.ts`.
+
+---
+
 ## Translations Interface (excerpt)
 
 Defined in `src/i18n/translations/en.ts` - the authoritative schema all locales must satisfy.
