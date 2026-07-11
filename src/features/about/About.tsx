@@ -7,13 +7,12 @@ interface SkillCategory {
 }
 
 const skills: SkillCategory[] = [
-  { label: 'Languages', items: ['TypeScript', 'JavaScript', 'Python', 'Java'] },
-  { label: 'Frontend', items: ['React', 'Redux', 'HTML5', 'CSS3', 'Tailwind CSS', 'Shadcn UI', 'Angular'] },
-  { label: 'Backend & APIs', items: ['Node.js', 'FastAPI', 'Pydantic v2', 'REST APIs', 'GraphQL'] },
-  { label: 'Testing & QA', items: ['Jest', 'Vitest', 'Cypress', 'Pytest', 'TDD'] },
-  { label: 'DevOps & Cloud', items: ['Docker', 'GitHub Actions', 'Netlify', 'Git', 'CI/CD'] },
-  { label: 'Databases', items: ['PostgreSQL', 'MongoDB', 'SQL Server'] },
-  { label: 'AI / LLM', items: ['Claude API', 'GPT-4', 'asyncio Pipelines', 'Prompt Engineering'] },
+  { label: 'Languages', items: ['TypeScript', 'JavaScript (ES6+)', 'Python', 'Java', 'SQL'] },
+  { label: 'Frontend', items: ['React.js', 'Redux Toolkit', 'Angular', 'Vue 3', 'Tailwind CSS', 'Shadcn UI', 'HTML5', 'CSS3', 'Responsive Design'] },
+  { label: 'Backend & Data', items: ['Node.js', 'Express', 'FastAPI', 'Pydantic v2', 'REST', 'GraphQL', 'PostgreSQL', 'MongoDB', 'MySQL', 'SQL Server'] },
+  { label: 'DevOps & Observability', items: ['Docker', 'Azure Container Apps', 'GitHub Actions', 'CI/CD', 'Git', 'Azure', 'Netlify', 'Structured Logging', 'Correlation-ID Tracing', 'Azure Monitor'] },
+  { label: 'Testing & QA', items: ['Jest', 'Vitest', 'Pytest', 'Cypress', 'Playwright', 'Supertest', 'k6', 'TypeScript Strict Mode', 'mypy Strict Mode'] },
+  { label: 'Methods & AI', items: ['Agile/Scrum', 'Code Review', 'Requirements Engineering', 'Clean Architecture', 'Event-Driven Architecture', 'STRIDE Threat Modelling', 'GDPR', 'WCAG', 'LLM Orchestration', 'Claude API', 'OpenAI GPT-4 API'] },
 ]
 
 const education = [
@@ -22,8 +21,8 @@ const education = [
     degree: "MSc Software Engineering",
     institution: 'Blekinge Institute of Technology',
     location: 'Karlskrona, Sweden',
-    period: 'Sep 2024 - Jun 2026 (Expected)',
-    detail: 'Thesis: AI-assisted Detection of Requirements Smells',
+    period: 'Sep 2024 - Sep 2026 (Expected)',
+    detail: 'Thesis: AI-assisted Detection of Requirements Smells | Courses: Software Architecture, Applied AI, Software Metrics, Software Quality',
   },
   {
     id: 2,

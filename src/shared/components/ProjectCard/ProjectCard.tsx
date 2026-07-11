@@ -337,7 +337,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
               title={singleDoc.label}
             >
               <ion-icon name="download-outline"></ion-icon>
-              <span className="truncate">{singleDoc.label}</span>
+              <span className="truncate">Document</span>
             </button>
           )}
 
