@@ -262,10 +262,10 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
       {/* Card body */}
       <div className="flex flex-col gap-3 p-5 flex-1">
         <div className="flex flex-col gap-0.5">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
+          <span className="line-clamp-1 text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
             {subtitle}
           </span>
-          <h3 className="text-sm font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
+          <h3 className="line-clamp-2 text-sm font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
             {title}
           </h3>
         </div>
@@ -273,13 +273,9 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
         {/* Description */}
         <div className="flex flex-col gap-1">
           <p
-            className="text-xs leading-relaxed"
+            className={`text-xs leading-relaxed ${needsToggle && !expanded ? 'line-clamp-4' : ''}`}
             style={{
               color: 'var(--text-secondary)',
-              display: '-webkit-box',
-              WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: needsToggle && !expanded ? 4 : 'unset',
-              overflow: needsToggle && !expanded ? 'hidden' : 'visible',
             }}
           >
             {description}

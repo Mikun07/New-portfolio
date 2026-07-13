@@ -63,6 +63,19 @@ const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Vitest', 'RBAC'],
   },
   {
+    id: 7,
+    github: 'https://github.com/Mikun07/Blog-Frontend.git',
+    docs: [
+      { label: 'Backend Overview', url: '/projects/BinaryBlog/PROJECT-OVERVIEW-BACKEND.md' },
+      { label: 'Frontend Overview', url: '/projects/BinaryBlog/PROJECT-OVERVIEW-FRONTEND.md' },
+    ],
+    title: 'BinaryBlog: Full-Stack Blog Platform',
+    subtitle: 'React + Laravel Platform',
+    description:
+      'Full-stack blog platform split into a React single-page frontend and a Laravel 10 REST API. Guests can browse and filter published posts, authors can draft, publish, archive, delete, and upload cover images, while admins manage users, posts, comments, and backend health. The backend uses Sanctum authentication, MySQL, Eloquent models, Form Request validation, notifications, and PHPUnit CI across PHP 8.1, 8.2, and 8.3.',
+    tags: ['React', 'Laravel', 'PHP', 'MySQL', 'Sanctum', 'REST API', 'PHPUnit', 'GitHub Actions'],
+  },
+  {
     id: 4,
     github: 'https://github.com/Mikun07/Product_Search.git',
     href: 'https://productseacrh.netlify.app',
