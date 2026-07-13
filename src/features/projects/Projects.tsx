@@ -45,7 +45,7 @@ const projects: Project[] = [
       { label: 'Project Overview', url: '/projects/mikunair/PROJECT-OVERVIEW.md' },
     ],
     title: 'MikunAir: Full-Stack Flight Booking',
-    subtitle: 'Portfolio Project',
+    subtitle: 'Full-Stack Platform',
     description:
       'Production-grade flight booking system as two independently versioned and containerised services: a React 18/TypeScript SPA (Vite, Tailwind, Apollo Client) and a Node.js/Express/TypeScript API with GitHub Actions CI. Dual-protocol API: GraphQL for flight search with depth-limited abuse prevention, REST + Zod for bookings. PostgreSQL SELECT FOR UPDATE prevents overbooking under concurrent load. Hub-and-spoke connecting-flight engine with 45-minute/4-hour layover enforcement. GDPR-compliant identity management with PII erasure tested by integration test IT-011.',
     tags: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'PostgreSQL', 'Docker', 'Playwright', 'Drizzle ORM'],
@@ -56,7 +56,7 @@ const projects: Project[] = [
     docs: [
       { label: 'Project Overview', url: '/projects/IncidentTrack/PROJECT-OVERVIEW.md' },
     ],
-    title: 'IncidentTrack: Incident Management Platform',
+    title: 'IncidentTrack: Full-Stack Incident Management Platform',
     subtitle: 'Full-Stack Platform',
     description:
       'Full-stack incident management system built as independently versioned frontend and backend repositories. The platform tracks services, incidents, lifecycle transitions, timelines, postmortems, action items, role-based access, and audit logs. Backend rules enforce incident state transitions, RBAC, validation, and accountability; the React frontend presents operational dashboards and response workflows.',
@@ -70,7 +70,7 @@ const projects: Project[] = [
       { label: 'Frontend Overview', url: '/projects/BinaryBlog/PROJECT-OVERVIEW-FRONTEND.md' },
     ],
     title: 'BinaryBlog: Full-Stack Blog Platform',
-    subtitle: 'React + Laravel Platform',
+    subtitle: 'Full-Stack React + Laravel Platform',
     description:
       'Full-stack blog platform split into a React single-page frontend and a Laravel 10 REST API. Guests can browse and filter published posts, authors can draft, publish, archive, delete, and upload cover images, while admins manage users, posts, comments, and backend health. The backend uses Sanctum authentication, MySQL, Eloquent models, Form Request validation, notifications, and PHPUnit CI across PHP 8.1, 8.2, and 8.3.',
     tags: ['React', 'Laravel', 'PHP', 'MySQL', 'Sanctum', 'REST API', 'PHPUnit', 'GitHub Actions'],
