@@ -16,7 +16,7 @@ const experiences: ExperienceItem[] = [
     role: 'Software Engineer, MSc Thesis Research (ReqSmell)',
     company: 'Blekinge Institute of Technology | AI Requirements Analysis Tool',
     location: 'Karlskrona, Sweden',
-    period: 'Jan 2025 - Present',
+    period: 'Jan 2026 - Present',
     type: 'Research project',
     bullets: [
       'Achieved zero cross-pipeline contamination across 4 concurrent LLM analysis pipelines (Claude API and GPT-4), verified in thesis evaluation through fault-isolated asyncio orchestration in FastAPI.',
