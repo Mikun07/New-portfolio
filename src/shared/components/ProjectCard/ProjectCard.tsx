@@ -173,6 +173,8 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
   const triggerRef = useRef<HTMLButtonElement>(null)
   const { showToast } = useToast()
   const needsToggle = description.length > 200
+  const visibleTags = tags.slice(0, 5)
+  const hiddenTagCount = tags.length - visibleTags.length
   const docEntries = docs ?? []
   const docCount = docEntries.length
   const hasDocs = docCount > 0
@@ -201,7 +203,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
     <article className="clay-card group flex h-full flex-col overflow-hidden">
 
       {/* Thumbnail / placeholder */}
-      <div className="relative overflow-hidden h-36 shrink-0" style={{ borderRadius: 'var(--clay-radius) var(--clay-radius) 0 0' }}>
+      <div className="relative h-28 shrink-0 overflow-hidden sm:h-32" style={{ borderRadius: 'var(--clay-radius) var(--clay-radius) 0 0' }}>
         {img ? (
           <img
             src={img}
@@ -210,7 +212,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
           />
         ) : (
           <div
-            className="w-full h-full flex items-center justify-center text-4xl font-bold select-none"
+            className="flex h-full w-full select-none items-center justify-center text-3xl font-bold"
             style={{
               background: 'linear-gradient(135deg, var(--accent-dim) 0%, var(--bg-card) 100%)',
               color: 'var(--accent)',
@@ -226,7 +228,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
             href={github}
             target="_blank"
             rel="noreferrer"
-            className="flex h-8 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-white/30 px-3 text-xs font-semibold text-white transition-colors duration-200 hover:border-white"
+            className="flex h-7 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-white/30 px-2.5 text-[0.7rem] font-semibold text-white transition-colors duration-200 hover:border-white"
           >
             <ion-icon name="logo-github"></ion-icon>
             {labels.code}
@@ -236,7 +238,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="flex h-8 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-white/30 px-3 text-xs font-semibold text-white transition-colors duration-200 hover:border-white"
+              className="flex h-7 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-white/30 px-2.5 text-[0.7rem] font-semibold text-white transition-colors duration-200 hover:border-white"
             >
               <ion-icon name="open-outline"></ion-icon>
               {labels.live}
@@ -247,7 +249,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
         {/* Featured badge */}
         {featured && (
           <span
-            className="absolute top-3 left-3 text-xs font-bold px-2.5 py-1 rounded-full"
+            className="absolute left-2.5 top-2.5 rounded-full px-2 py-0.5 text-[0.65rem] font-bold"
             style={{
               backgroundColor: 'var(--accent)',
               color: '#fff',
@@ -260,12 +262,12 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
       </div>
 
       {/* Card body */}
-      <div className="flex flex-col gap-3 p-5 flex-1">
+      <div className="flex flex-1 flex-col gap-2.5 p-4">
         <div className="flex flex-col gap-0.5">
-          <span className="line-clamp-1 text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
+          <span className="line-clamp-1 text-[0.68rem] font-bold uppercase tracking-widest" style={{ color: 'var(--accent)' }}>
             {subtitle}
           </span>
-          <h3 className="line-clamp-2 text-sm font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
+          <h3 className="line-clamp-2 text-[0.82rem] font-bold leading-snug" style={{ color: 'var(--text-primary)' }}>
             {title}
           </h3>
         </div>
@@ -273,7 +275,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
         {/* Description */}
         <div className="flex flex-col gap-1">
           <p
-            className={`text-xs leading-relaxed ${needsToggle && !expanded ? 'line-clamp-4' : ''}`}
+            className={`text-[0.72rem] leading-relaxed ${needsToggle && !expanded ? 'line-clamp-3' : ''}`}
             style={{
               color: 'var(--text-secondary)',
             }}
@@ -283,7 +285,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
           {needsToggle && (
             <button
               onClick={() => setExpanded((v) => !v)}
-              className="self-start text-xs font-semibold mt-0.5"
+              className="mt-0.5 self-start text-[0.7rem] font-semibold"
               style={{ color: 'var(--accent)' }}
             >
               {expanded ? labels.showLess : labels.readMore}
@@ -293,21 +295,24 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
 
         {/* Tags */}
         <div
-          className="flex flex-wrap gap-1.5 pt-3 mt-auto"
+          className="mt-auto flex flex-wrap gap-1 pt-2"
           style={{ borderTop: '1px solid var(--border-card)' }}
         >
-          {tags.map((tag) => (
+          {visibleTags.map((tag) => (
             <span key={tag} className="clay-tag">{tag}</span>
           ))}
+          {hiddenTagCount > 0 && (
+            <span className="clay-tag">+{hiddenTagCount}</span>
+          )}
         </div>
 
         {/* Action row */}
-        <div className="flex min-h-[34px] flex-wrap items-center gap-2 pt-1">
+        <div className="flex min-h-[30px] flex-wrap items-center gap-1.5 pt-0.5">
           <a
             href={github}
             target="_blank"
             rel="noreferrer"
-            className="clay-btn-outline flex h-8 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
+            className="clay-btn-outline flex h-7 items-center justify-center gap-1.5 whitespace-nowrap px-2.5 text-[0.7rem]"
           >
             <ion-icon name="logo-github"></ion-icon>
             {labels.code}
@@ -317,7 +322,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="clay-btn-outline flex h-8 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
+              className="clay-btn-outline flex h-7 items-center justify-center gap-1.5 whitespace-nowrap px-2.5 text-[0.7rem]"
             >
               <ion-icon name="open-outline"></ion-icon>
               {labels.live}
@@ -328,7 +333,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
             <button
               type="button"
               onClick={() => handleDownload(singleDoc)}
-              className="clay-btn-primary flex h-8 max-w-full items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
+              className="clay-btn-primary flex h-7 max-w-full items-center justify-center gap-1.5 whitespace-nowrap px-2.5 text-[0.7rem]"
               aria-label={`Download ${singleDoc.label}`}
               title={singleDoc.label}
             >
@@ -343,7 +348,7 @@ function ProjectCard({ img, github, href, docs, title, subtitle, description, ta
                 ref={triggerRef}
                 type="button"
                 onClick={() => setDocsOpen((v) => !v)}
-                className="clay-btn-primary flex h-8 items-center justify-center gap-1.5 whitespace-nowrap px-3 text-xs"
+                className="clay-btn-primary flex h-7 items-center justify-center gap-1.5 whitespace-nowrap px-2.5 text-[0.7rem]"
                 aria-haspopup="true"
                 aria-expanded={docsOpen}
               >
