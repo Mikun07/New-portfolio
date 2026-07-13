@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import ProjectCard from '../../shared/components/ProjectCard/ProjectCard'
 import { useLanguage } from '../../core/providers/LanguageProvider'
 
@@ -116,8 +117,21 @@ const projects: Project[] = [
   },
 ]
 
+const PROJECTS_PER_PAGE = 3
+
 function Projects() {
   const { t } = useLanguage()
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE)
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1)
+  const firstProjectIndex = (currentPage - 1) * PROJECTS_PER_PAGE
+  const visibleProjects = projects.slice(firstProjectIndex, firstProjectIndex + PROJECTS_PER_PAGE)
+  const hasPreviousPage = currentPage > 1
+  const hasNextPage = currentPage < totalPages
+
+  function goToPage(page: number) {
+    setCurrentPage(Math.min(Math.max(page, 1), totalPages))
+  }
 
   return (
     <section
@@ -136,7 +150,7 @@ function Projects() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <ProjectCard
               key={project.id}
               {...project}
@@ -151,6 +165,59 @@ function Projects() {
             />
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <nav
+            className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-between"
+            aria-label="Project pagination"
+          >
+            <p
+              className="text-xs font-semibold tabular-nums"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              {currentPage} / {totalPages}
+            </p>
+
+            <div className="flex items-center justify-center gap-2">
+              <button
+                type="button"
+                onClick={() => goToPage(currentPage - 1)}
+                disabled={!hasPreviousPage}
+                className="clay-btn-outline flex h-9 w-9 items-center justify-center text-sm disabled:cursor-not-allowed disabled:opacity-45"
+                aria-label="Show previous projects page"
+              >
+                <ion-icon name="chevron-back-outline"></ion-icon>
+              </button>
+
+              {pageNumbers.map((pageNumber) => {
+                const isCurrentPage = pageNumber === currentPage
+
+                return (
+                  <button
+                    key={pageNumber}
+                    type="button"
+                    onClick={() => goToPage(pageNumber)}
+                    className={`${isCurrentPage ? 'clay-btn-primary' : 'clay-btn-outline'} flex h-9 min-w-9 items-center justify-center px-3 text-xs tabular-nums`}
+                    aria-label={`Show projects page ${pageNumber}`}
+                    aria-current={isCurrentPage ? 'page' : undefined}
+                  >
+                    {pageNumber}
+                  </button>
+                )
+              })}
+
+              <button
+                type="button"
+                onClick={() => goToPage(currentPage + 1)}
+                disabled={!hasNextPage}
+                className="clay-btn-outline flex h-9 w-9 items-center justify-center text-sm disabled:cursor-not-allowed disabled:opacity-45"
+                aria-label="Show next projects page"
+              >
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </button>
+            </div>
+          </nav>
+        )}
       </div>
     </section>
   )
